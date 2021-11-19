@@ -13,6 +13,7 @@ const H1 = styled.h1`
   text-align: left;
   cursor: pointer;
   margin: 10px 0;
+  
 `;
 
 export const BigText = ({

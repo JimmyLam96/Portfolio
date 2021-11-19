@@ -4,6 +4,12 @@ const GlobalStyle = createGlobalStyle`
     * {
         box-sizing: border-box;
         margin: 0;
+        /* overscroll-behavior: none; */
+    }
+
+    html, body, #___gatsby, #gatsby-focus-wrapper{
+        overscroll-behavior: none;
+        height: 100vh;
     }
 `;
 
