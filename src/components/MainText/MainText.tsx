@@ -1,7 +1,8 @@
 import React from 'react';
 import { BigText, Content, SmallText } from './styles';
-import Arrow from '../../images/Arrow.svg';
+import Triangle from '../../images/Triangle.svg';
 import { gsap } from 'gsap';
+import Button from '../Button/Button';
 
 export default function MainText() {
   const timeLine = gsap.timeline();
@@ -11,7 +12,8 @@ export default function MainText() {
       <SmallText timeLine={timeLine}>
         my name is <b>Jimmy Lam</b> and i’m a software engineer
       </SmallText>
-      <Arrow></Arrow>
+      <Button timeLine={timeLine} />
+      <Triangle></Triangle>
     </Content>
   );
 }
