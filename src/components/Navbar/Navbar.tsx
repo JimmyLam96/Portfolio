@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import Github from '../images/Github.svg';
-import Linkedin from '../images/Linkedin.svg';
+import Github from '../../images/Github.svg';
+import Linkedin from '../../images/Linkedin.svg';
+import { HR } from './styles';
 
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  height: 35px;
 `;
 
 const ListItem = styled.li`
@@ -18,18 +20,6 @@ const ListItem = styled.li`
   letter-spacing: 0em;
   text-align: left;
   cursor: pointer;
-  /* animation: slidein 1s ease-out;
-
-  @keyframes slidein {
-    from {
-      opacity: 0;
-      transform: translateY(-20vh);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  } */
 `;
 
 const LinkList = styled.ul`
@@ -54,16 +44,19 @@ const IconStyles = { cursor: 'pointer' };
 
 export default function Navbar() {
   return (
-    <Container>
-      <LinkList>
-        <ListItem>work</ListItem>
-        <ListItem>about</ListItem>
-        <ListItem>contact</ListItem>
-      </LinkList>
-      <IconContainer>
-        <Github style={IconStyles} />
-        <Linkedin style={IconStyles} />
-      </IconContainer>
-    </Container>
+    <>
+      <Container>
+        <LinkList>
+          <ListItem>work</ListItem>
+          <ListItem>about</ListItem>
+          <ListItem>contact</ListItem>
+        </LinkList>
+        <IconContainer>
+          <Github style={IconStyles} />
+          <Linkedin style={IconStyles} />
+        </IconContainer>
+      </Container>
+      <HR />
+    </>
   );
 }

@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
         overscroll-behavior: none;
         height: 100vh;
     }
+
+    .pin-spacer {
+        /* width: 500% !important; */
+    }
 `;
 
 export default GlobalStyle;

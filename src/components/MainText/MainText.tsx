@@ -1,6 +1,6 @@
 import React from 'react';
 import { BigText, Content, SmallText } from './styles';
-import Arrow from "../../images/Arrow.svg";
+import Arrow from '../../images/Arrow.svg';
 import { gsap } from 'gsap';
 
 export default function MainText() {

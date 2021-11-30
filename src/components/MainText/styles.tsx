@@ -13,7 +13,6 @@ const H1 = styled.h1`
   text-align: left;
   cursor: pointer;
   margin: 10px 0;
-  
 `;
 
 export const BigText = ({
@@ -85,5 +84,6 @@ export const SmallText = ({
 
 export const Content = styled.div`
   display: flex;
+  flex-grow: 2;
   flex-direction: column;
 `;
