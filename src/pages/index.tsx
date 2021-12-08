@@ -58,7 +58,7 @@ const App = () => {
     <Main>
       <GlobalStyle />
       <title>Jimmy Lam</title>
-      <Home props={{}} />
+      <Home />
       <Work props={{}} />
       {/* <Section
         style={{ backgroundColor: 'red' }}

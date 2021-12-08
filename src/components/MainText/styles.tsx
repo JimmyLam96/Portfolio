@@ -52,7 +52,7 @@ const H2 = styled.h2`
   letter-spacing: 0em;
   text-align: left;
   cursor: pointer;
-  margin: 10px 0;
+  margin: 15px 0;
 `;
 
 export const SmallText = ({

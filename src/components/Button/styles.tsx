@@ -9,10 +9,11 @@ export const Content = styled.div`
   padding: 14px 0;
   border-radius: 20px;
   cursor: pointer;
-
-  background: linear-gradient(to left, white 50%, #ffd803 50%) right;
+  user-select: none;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 50%, #ffd803 50%)
+    right;
   background-size: 200%;
-  transition: 0.2s ease-out;
+  transition: 0.25s ease-out;
   &:hover {
     background-position: left;
   }
