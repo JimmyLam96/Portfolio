@@ -3,7 +3,8 @@ import React, { useEffect } from 'react';
 import Moon from '../../images/Moon.svg';
 import Polka from '../../images/Polka.svg';
 import Waves from '../../images/Waves.svg';
-import { Background, MoonDiv, WavesDiv, PolkaDiv } from './styles';
+import Circle from '../../images/Circle.svg';
+import { Background, MoonDiv, WavesDiv, PolkaDiv, CircleDiv } from './styles';
 
 const container: Variants = {
   hidden: {
@@ -17,7 +18,7 @@ const container: Variants = {
   },
 };
 
-const item = {
+const IconVariants = {
   hidden: { opacity: 0, y: 500 },
   show: {
     opacity: 1,
@@ -33,13 +34,15 @@ const item = {
 export const Icons = ({ timeLine }: { timeLine: Promise<any> }) => {
   const iconsControl = useAnimation();
 
-  const temp = async () => {
+  //async function that makes sure all the animtions before this page are run before this page's animations are run
+  const runPreviousAnimations = async () => {
     await timeLine;
     return iconsControl.start('show');
   };
 
+  //as soon as we load into the page run previous animations
   useEffect(() => {
-    temp();
+    runPreviousAnimations();
   }, []);
 
   return (
@@ -49,12 +52,15 @@ export const Icons = ({ timeLine }: { timeLine: Promise<any> }) => {
       animate={iconsControl}
       exit="exit"
     >
-      <MoonDiv variants={item}>
+      <MoonDiv variants={IconVariants}>
         <Moon />
       </MoonDiv>
-      <WavesDiv variants={item}>
+      <WavesDiv variants={IconVariants}>
         <Waves />
       </WavesDiv>
+      <CircleDiv variants={IconVariants}>
+        <Circle />
+      </CircleDiv>
       <PolkaDiv>
         <Polka />
       </PolkaDiv>

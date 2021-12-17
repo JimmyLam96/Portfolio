@@ -25,6 +25,14 @@ export const InnerContent = styled.div`
   align-items: center;
 `;
 
+export const Border = styled(motion.div)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  border: 5px solid #ffd803;
+`;
+
 export const MainContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -84,8 +92,19 @@ export const PolkaDiv = styled(motion.div)`
   align-items: center;
 `;
 
-export const Profile = styled.div`
+export const CircleDiv = styled(motion.div)`
+  grid-column: 2 / 5;
+  grid-row: 7 / 10;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+`;
+
+export const Profile = styled(motion.div)`
   display: grid;
   grid-column: 5 / 7;
   margin-top: 40px;
+  position: relative;
 `;
