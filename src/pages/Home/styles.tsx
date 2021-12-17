@@ -16,6 +16,13 @@ export const Content = styled.section`
   overflow: hidden;
 `;
 
+export const InnerContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-grow: 2;
+  justify-content: space-between;
+`;
+
 export const MainContainer = styled.div`
   width: 100%;
   height: 100%;

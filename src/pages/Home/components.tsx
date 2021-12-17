@@ -1,4 +1,4 @@
-import { Variants } from 'framer-motion';
+import { useAnimation, Variants } from 'framer-motion';
 import React, { useEffect } from 'react';
 import Moon from '../../images/Moon.svg';
 import Polka from '../../images/Polka.svg';
@@ -30,12 +30,23 @@ const item = {
   },
 };
 
-export const Icons = () => {
+export const Icons = ({ timeLine }: { timeLine: Promise<any> }) => {
+  const iconsControl = useAnimation();
+
+  const temp = async () => {
+    await timeLine;
+    return iconsControl.start('show');
+  };
+
+  useEffect(() => {
+    temp();
+  }, []);
+
   return (
     <Background
       variants={container}
       initial="hidden"
-      animate="show"
+      animate={iconsControl}
       exit="exit"
     >
       <MoonDiv variants={item}>

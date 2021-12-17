@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import { useEffect, useRef, useState } from 'react';
-import React from 'react';
-import { gsap } from 'gsap';
+import { motion } from 'framer-motion';
 
 const H1 = styled.h1`
   font-family: Quicksand;
@@ -15,35 +13,12 @@ const H1 = styled.h1`
   margin: 10px 0;
 `;
 
-export const BigText = ({
-  children,
-  timeLine,
-}: {
-  children: any;
-  timeLine: gsap.core.Timeline;
-}) => {
-  const el = useRef(null);
+export const EmojiContainer = styled(motion.div)`
+  display: flex;
+  width: fit-content;
+`;
 
-  //upon load bounce up the text
-  useEffect(() => {
-    timeLine.fromTo(
-      el.current,
-      {
-        y: +25,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        ease: 'back',
-      },
-    );
-  }, []);
-
-  return <H1 ref={el}>{children}</H1>;
-};
-
-const H2 = styled.h2`
+export const H2 = styled.h2`
   font-family: Quicksand;
   font-size: 1rem;
   font-style: normal;
@@ -54,33 +29,6 @@ const H2 = styled.h2`
   cursor: pointer;
   margin: 15px 0;
 `;
-
-export const SmallText = ({
-  children,
-  timeLine,
-}: {
-  children: any;
-  timeLine: gsap.core.Timeline;
-}) => {
-  const el = useRef(null);
-
-  //upon load bounce down the text
-  useEffect(() => {
-    timeLine.fromTo(
-      el.current,
-      {
-        y: -25,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        ease: 'back',
-      },
-    );
-  }, []);
-  return <H2 ref={el}>{children}</H2>;
-};
 
 export const Content = styled.div`
   display: flex;
