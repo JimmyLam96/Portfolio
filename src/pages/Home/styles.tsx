@@ -14,13 +14,15 @@ export const Content = styled.section`
   text-align: center;
   box-sizing: border-box;
   overflow: hidden;
+  align-items: center;
 `;
 
 export const InnerContent = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-grow: 2;
-  justify-content: space-between;
+  display: grid;
+  grid-gap: 1fr;
+  grid-template-columns: repeat(7, 1fr);
+  flex-grow: 1;
+  align-items: center;
 `;
 
 export const MainContainer = styled.div`
@@ -29,7 +31,7 @@ export const MainContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 80px;
+  padding: 5%;
 `;
 
 export const BG = styled(HomePageBG)`
@@ -54,7 +56,7 @@ export const Background = styled(motion.div)`
 
 export const MoonDiv = styled(motion.div)`
   grid-column: 16 / 18;
-  grid-row: 5 / 8;
+  grid-row: 4 / 7;
   width: 100%;
   height: auto;
   padding: 10px;
@@ -64,7 +66,7 @@ export const MoonDiv = styled(motion.div)`
 
 export const WavesDiv = styled(motion.div)`
   grid-column: 12 / 14;
-  grid-row: 3 / 6;
+  grid-row: 3 / 5;
   width: 100%;
   height: auto;
   padding: 10px;
@@ -83,6 +85,7 @@ export const PolkaDiv = styled(motion.div)`
 `;
 
 export const Profile = styled.div`
-  border-radius: 20px;
-  margin-right: 25%;
+  display: grid;
+  grid-column: 5 / 7;
+  margin-top: 40px;
 `;

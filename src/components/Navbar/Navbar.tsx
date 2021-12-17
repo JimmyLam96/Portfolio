@@ -56,7 +56,7 @@ export default function Navbar() {
           <Linkedin style={IconStyles} />
         </IconContainer>
       </Container>
-      <HR />
+      {/* <HR /> */}
     </>
   );
 }

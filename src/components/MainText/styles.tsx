@@ -31,6 +31,7 @@ export const H2 = styled.h2`
 `;
 
 export const Content = styled.div`
-  display: flex;
   flex-direction: column;
+  display: grid;
+  grid-column: 1 / 3;
 `;

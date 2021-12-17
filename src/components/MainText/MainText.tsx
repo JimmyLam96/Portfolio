@@ -1,6 +1,5 @@
 import React from 'react';
 import { Content, H2, EmojiContainer } from './styles';
-import { gsap } from 'gsap';
 import Button from '../Button/Button';
 import WaveEmoji from '../../images/WaveEmoji.svg';
 import { AnimationControls, motion } from 'framer-motion';
@@ -10,7 +9,6 @@ export default function MainText({
 }: {
   controls: AnimationControls;
 }) {
-  const timeLine = gsap.timeline();
   return (
     <Content>
       <EmojiContainer animate={controls}>
