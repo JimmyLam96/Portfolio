@@ -18,19 +18,10 @@ export const Content = styled.section`
 `;
 
 export const InnerContent = styled.div`
-  display: grid;
-  grid-gap: 1fr;
-  grid-template-columns: repeat(7, 1fr);
-  flex-grow: 1;
+  display: flex;
   align-items: center;
-`;
-
-export const Border = styled(motion.div)`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
-  border: 5px solid #ffd803;
+  justify-content: space-between;
+  max-width: 85%;
 `;
 
 export const MainContainer = styled.div`
@@ -51,38 +42,6 @@ export const BG = styled(HomePageBG)`
   max-height: 1500px;
 `;
 
-export const Background = styled(motion.div)`
-  position: absolute;
-  display: grid;
-  width: 100%;
-  height: 100%;
-  grid-template-columns: repeat(20, 1fr);
-  grid-template-rows: repeat(20, 1fr);
-  min-width: 0;
-  min-height: 0;
-  z-index: -1;
-`;
-
-export const MoonDiv = styled(motion.div)`
-  grid-column: 16 / 18;
-  grid-row: 4 / 7;
-  width: 100%;
-  height: auto;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-`;
-
-export const WavesDiv = styled(motion.div)`
-  grid-column: 12 / 14;
-  grid-row: 3 / 5;
-  width: 100%;
-  height: auto;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-`;
-
 export const PolkaDiv = styled(motion.div)`
   grid-column: 18 / 21;
   grid-row: 17 / 20;
@@ -101,11 +60,4 @@ export const CircleDiv = styled(motion.div)`
   padding: 10px;
   display: flex;
   align-items: center;
-`;
-
-export const Profile = styled(motion.div)`
-  display: grid;
-  grid-column: 5 / 7;
-  margin-top: 40px;
-  position: relative;
 `;

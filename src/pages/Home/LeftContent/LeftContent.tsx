@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   Content,
   H2,
@@ -6,10 +6,10 @@ import {
   IconContainer,
   CircleContainer,
 } from './styles';
-import Button from '../Button/Button';
-import WaveEmoji from '../../images/WaveEmoji.svg';
-import { AnimationControls, motion, useAnimation } from 'framer-motion';
-import Circle from '../../images/Circle.svg';
+import Button from '../../../components/Button/Button';
+import { AnimationControls } from 'framer-motion';
+import WaveEmoji from '../../../images/WaveEmoji.svg';
+import Circle from '../../../images/Circle.svg';
 
 const EmojiVariants = {
   initial: { opacity: 0 },
@@ -36,7 +36,7 @@ const circleVariants = {
   },
 };
 
-export default function MainText({
+export default function Left({
   handControls,
   iconControls,
 }: {

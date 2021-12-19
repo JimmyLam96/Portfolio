@@ -1,30 +1,11 @@
 import React, { useEffect } from 'react';
 import { forwardRef } from 'react';
-import MainText from '../../components/MainText/MainText';
+import Left from './LeftContent/LeftContent';
 import Navbar from '../../components/Navbar/Navbar';
-import {
-  BG,
-  Content,
-  MainContainer,
-  Profile,
-  InnerContent,
-  Border,
-} from './styles';
+import { BG, Content, MainContainer, InnerContent } from './styles';
 import Triangle from '../../images/Triangle.svg';
-import { Icons } from './components';
-import { StaticImage } from 'gatsby-plugin-image';
 import { useAnimation } from 'framer-motion';
-
-const BorderVariants = {
-  initial: {
-    x: 20,
-    y: 20,
-  },
-  hover: {
-    x: 30,
-    y: 30,
-  },
-};
+import Right from './RightContent/RightContent';
 
 const HomePage = forwardRef(
   ({ ref }: { ref: React.MutableRefObject<HTMLElement> }) => {
@@ -50,32 +31,14 @@ const HomePage = forwardRef(
         <MainContainer>
           <Navbar />
           <InnerContent>
-            <MainText handControls={handControls} iconControls={iconControls} />
-            <Profile
-              onHoverStart={() => {
-                handControls.start(BorderVariants.hover);
-              }}
-              onHoverEnd={() => {
-                handControls.start(BorderVariants.initial);
-              }}
-            >
-              <Border
-                initial="initial"
-                variants={BorderVariants}
-                animate={borderControls}
-              />
-              <StaticImage
-                src="../../images/photo.png"
-                alt="profile picture"
-                width={300}
-                height={400}
-                style={{ borderRadius: '25px' }}
-              />
-            </Profile>
+            <Left handControls={handControls} iconControls={iconControls} />
+            <Right
+              borderControls={borderControls}
+              iconControls={iconControls}
+            />
           </InnerContent>
           <Triangle style={{ display: 'flex', alignSelf: 'center' }} />
         </MainContainer>
-        <Icons iconControls={iconControls} />
         <BG />
       </Content>
     );
