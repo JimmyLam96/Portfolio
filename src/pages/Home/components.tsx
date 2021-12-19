@@ -1,4 +1,4 @@
-import { useAnimation, Variants } from 'framer-motion';
+import { AnimationControls, useAnimation, Variants } from 'framer-motion';
 import React, { useEffect } from 'react';
 import Moon from '../../images/Moon.svg';
 import Polka from '../../images/Polka.svg';
@@ -31,25 +31,16 @@ const IconVariants = {
   },
 };
 
-export const Icons = ({ timeLine }: { timeLine: Promise<any> }) => {
-  const iconsControl = useAnimation();
-
-  //async function that makes sure all the animtions before this page are run before this page's animations are run
-  const runPreviousAnimations = async () => {
-    await timeLine;
-    return iconsControl.start('show');
-  };
-
-  //as soon as we load into the page run previous animations
-  useEffect(() => {
-    runPreviousAnimations();
-  }, []);
-
+export const Icons = ({
+  iconControls,
+}: {
+  iconControls: AnimationControls;
+}) => {
   return (
     <Background
       variants={container}
       initial="hidden"
-      animate={iconsControl}
+      animate={iconControls}
       exit="exit"
     >
       <MoonDiv variants={IconVariants}>
@@ -58,9 +49,9 @@ export const Icons = ({ timeLine }: { timeLine: Promise<any> }) => {
       <WavesDiv variants={IconVariants}>
         <Waves />
       </WavesDiv>
-      <CircleDiv variants={IconVariants}>
+      {/* <CircleDiv variants={IconVariants}>
         <Circle />
-      </CircleDiv>
+      </CircleDiv> */}
       <PolkaDiv>
         <Polka />
       </PolkaDiv>

@@ -35,3 +35,16 @@ export const Content = styled.div`
   display: grid;
   grid-column: 1 / 3;
 `;
+
+export const IconContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  max-width: 200px;
+`;
+
+export const CircleContainer = styled(motion.div)`
+  position: relative;
+  width: 100px;
+  z-index: -1;
+`;

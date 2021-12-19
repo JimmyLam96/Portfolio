@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { forwardRef } from 'react';
 import MainText from '../../components/MainText/MainText';
 import Navbar from '../../components/Navbar/Navbar';
@@ -29,30 +29,40 @@ const BorderVariants = {
 const HomePage = forwardRef(
   ({ ref }: { ref: React.MutableRefObject<HTMLElement> }) => {
     const handControls = useAnimation();
-    const itemControls = useAnimation();
+    const iconControls = useAnimation();
+    const borderControls = useAnimation();
 
     //start of the animation sequence returns a promise
     //we await the promise in the icons component to have sequenced animation
-    const promise = handControls.start('hover');
+
+    const runSyncAnimations = async () => {
+      await handControls.start('hover');
+      return await iconControls.start('show');
+    };
+
+    //as soon as we load into the page run previous animations
+    useEffect(() => {
+      runSyncAnimations();
+    }, []);
 
     return (
       <Content className="page" ref={ref}>
         <MainContainer>
           <Navbar />
           <InnerContent>
-            <MainText controls={handControls} />
+            <MainText handControls={handControls} iconControls={iconControls} />
             <Profile
               onHoverStart={() => {
-                itemControls.start(BorderVariants.hover);
+                handControls.start(BorderVariants.hover);
               }}
               onHoverEnd={() => {
-                itemControls.start(BorderVariants.initial);
+                handControls.start(BorderVariants.initial);
               }}
             >
               <Border
                 initial="initial"
                 variants={BorderVariants}
-                animate={itemControls}
+                animate={borderControls}
               />
               <StaticImage
                 src="../../images/photo.png"
@@ -65,7 +75,7 @@ const HomePage = forwardRef(
           </InnerContent>
           <Triangle style={{ display: 'flex', alignSelf: 'center' }} />
         </MainContainer>
-        <Icons timeLine={promise} />
+        <Icons iconControls={iconControls} />
         <BG />
       </Content>
     );

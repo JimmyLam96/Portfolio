@@ -36,6 +36,7 @@ export const Border = styled(motion.div)`
 export const MainContainer = styled.div`
   width: 100%;
   height: 100%;
+  max-width: 1800px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -45,9 +46,9 @@ export const MainContainer = styled.div`
 export const BG = styled(HomePageBG)`
   z-index: -2;
   position: absolute;
-  width: 100%;
+  width: 100vw;
   height: 100%;
-  min-height: 500px;
+  max-height: 1500px;
 `;
 
 export const Background = styled(motion.div)`

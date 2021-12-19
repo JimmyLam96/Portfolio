@@ -1,10 +1,17 @@
-import React from 'react';
-import { Content, H2, EmojiContainer } from './styles';
+import React, { useEffect } from 'react';
+import {
+  Content,
+  H2,
+  EmojiContainer,
+  IconContainer,
+  CircleContainer,
+} from './styles';
 import Button from '../Button/Button';
 import WaveEmoji from '../../images/WaveEmoji.svg';
-import { AnimationControls, motion } from 'framer-motion';
+import { AnimationControls, motion, useAnimation } from 'framer-motion';
+import Circle from '../../images/Circle.svg';
 
-const variants = {
+const EmojiVariants = {
   initial: { opacity: 0 },
   hover: {
     opacity: 1,
@@ -15,16 +22,46 @@ const variants = {
   },
 };
 
+const circleVariants = {
+  hidden: { opacity: 0, y: 500 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.8,
+      duration: 1.2,
+      type: 'spring',
+      ease: [0.6, 0.01, -0.05, 0.95],
+    },
+  },
+};
+
 export default function MainText({
-  controls,
+  handControls,
+  iconControls,
 }: {
-  controls: AnimationControls;
+  handControls: AnimationControls;
+  iconControls: AnimationControls;
 }) {
   return (
     <Content>
-      <EmojiContainer whileHover="hover" variants={variants} animate={controls}>
-        <WaveEmoji />
-      </EmojiContainer>
+      <IconContainer>
+        <EmojiContainer
+          whileHover="hover"
+          variants={EmojiVariants}
+          animate={handControls}
+        >
+          <WaveEmoji />
+        </EmojiContainer>
+        <CircleContainer
+          initial="hidden"
+          variants={circleVariants}
+          animate={iconControls}
+          exit="exit"
+        >
+          <Circle style={{ position: 'absolute', left: -50, top: -30 }} />
+        </CircleContainer>
+      </IconContainer>
       <H2>
         <b>oh hi there!</b> my name is <b>Jimmy Lam</b> <br /> and i’m a
         software engineer
