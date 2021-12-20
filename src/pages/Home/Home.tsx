@@ -4,7 +4,7 @@ import Left from './LeftContent/LeftContent';
 import Navbar from '../../components/Navbar/Navbar';
 import { BG, Content, MainContainer, InnerContent } from './styles';
 import Triangle from '../../images/Triangle.svg';
-import { useAnimation } from 'framer-motion';
+import { useAnimation, useMotionValue } from 'framer-motion';
 import Right from './RightContent/RightContent';
 
 const HomePage = forwardRef(

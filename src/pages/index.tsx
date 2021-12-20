@@ -1,11 +1,12 @@
-import React, { createRef, useEffect, useRef, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import GlobalStyle from '../../styles/GlobalStyles';
 import Work from './Work/Work';
 import Home from './Home/Home';
+import About from './About/About';
 
 // styles
-const Main = styled.main.attrs({ className: 'Main' })`
+const Main = styled.div.attrs({ className: 'Main' })`
   padding: 0;
   margin: 0;
   width: 100%;
@@ -36,7 +37,8 @@ const App = () => {
       <GlobalStyle />
       <title>Jimmy Lam</title>
       <Home />
-      <Work props={{}} />
+      <About />
+      {/* <Work props={{}} /> */}
       {/* <Section
         style={{ backgroundColor: 'red' }}
         // ref={pageRef}

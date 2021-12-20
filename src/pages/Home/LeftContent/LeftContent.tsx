@@ -11,7 +11,7 @@ import { AnimationControls } from 'framer-motion';
 import WaveEmoji from '../../../images/WaveEmoji.svg';
 import Circle from '../../../images/Circle.svg';
 
-const EmojiVariants = {
+const emojiVariants = {
   initial: { opacity: 0 },
   hover: {
     opacity: 1,
@@ -34,6 +34,9 @@ const circleVariants = {
       ease: [0.6, 0.01, -0.05, 0.95],
     },
   },
+  scroll: {
+    y: 100,
+  },
 };
 
 export default function Left({
@@ -48,13 +51,14 @@ export default function Left({
       <IconContainer>
         <EmojiContainer
           whileHover="hover"
-          variants={EmojiVariants}
+          variants={emojiVariants}
           animate={handControls}
         >
           <WaveEmoji />
         </EmojiContainer>
         <CircleContainer
           initial="hidden"
+          onScroll={() => iconControls.start('scroll')}
           variants={circleVariants}
           animate={iconControls}
           exit="exit"
