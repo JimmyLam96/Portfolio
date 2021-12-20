@@ -57,18 +57,17 @@ export default function Right({
         borderControls.start(BorderVariants.initial);
       }}
     >
+      <StaticImage
+        src="../../..//images/photo.png"
+        alt="profile picture"
+        style={{ borderRadius: '25px', width: '300px', height: 'auto' }}
+      />
       <Border
         initial="initial"
         variants={BorderVariants}
         animate={borderControls}
       />
-      <StaticImage
-        src="../../images/photo.png"
-        alt="profile picture"
-        width={300}
-        height={400}
-        style={{ borderRadius: '25px' }}
-      />
+
       <Background
         variants={container}
         initial="hidden"

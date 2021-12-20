@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { ScreenSizes } from '../../../ScreenSizes';
 
 const H1 = styled.h1`
   font-family: Quicksand;
@@ -34,6 +35,9 @@ export const Content = styled.div`
   flex-direction: column;
   display: grid;
   grid-column: 1 / 3;
+  @media screen and (max-width: ${ScreenSizes.TABLET}) {
+    margin-top: 50px;
+  }
 `;
 
 export const IconContainer = styled.div`

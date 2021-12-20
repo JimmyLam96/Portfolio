@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import HomePageBG from '../../images/HomePageBG.svg';
+import { ScreenSizes } from '../../ScreenSizes';
 
 export const Content = styled.section`
   width: 100%;
@@ -21,7 +22,14 @@ export const InnerContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap-reverse;
   max-width: 85%;
+  @media screen and (max-width: ${ScreenSizes.TABLET}) {
+    justify-content: space-evenly;
+  }
+  @media screen and (max-width: ${ScreenSizes.LAPTOP}) {
+    max-width: 100%;
+  }
 `;
 
 export const MainContainer = styled.div`

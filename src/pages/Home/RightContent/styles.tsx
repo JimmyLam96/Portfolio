@@ -2,10 +2,11 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const Profile = styled(motion.div)`
-  display: grid;
-  grid-column: 5 / 7;
-  /* margin-top: 40px; */
+  display: flex;
   position: relative;
+  width: fit-content;
+  flex-wrap: wrap;
+  z-index: 1;
 `;
 
 export const Border = styled(motion.div)`
@@ -14,6 +15,7 @@ export const Border = styled(motion.div)`
   height: 100%;
   border-radius: 25px;
   border: 5px solid #ffd803;
+  z-index: -1;
 `;
 
 export const Background = styled(motion.div)`
