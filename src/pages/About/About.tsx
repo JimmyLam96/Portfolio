@@ -25,7 +25,7 @@ const ParentVariants = {
 const BlockVariants = {
   initial: {
     opacity: 0,
-    y: 100,
+    y: 50,
   },
   show: {
     opacity: 1,
@@ -52,15 +52,9 @@ export default function About() {
         variants={ParentVariants}
         animate={controls}
       >
-        <Sports gridColumn={1} variants={BlockVariants}>
-          test
-        </Sports>
-        <Coding gridColumn={2} variants={BlockVariants}>
-          test
-        </Coding>
-        <SmallBusiness gridColumn={3} variants={BlockVariants}>
-          test
-        </SmallBusiness>
+        <Sports variants={BlockVariants}>test</Sports>
+        <Coding variants={BlockVariants}>test</Coding>
+        <SmallBusiness variants={BlockVariants}>test</SmallBusiness>
       </Grid>
     </Content>
   );

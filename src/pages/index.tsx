@@ -16,20 +16,6 @@ const Main = styled.div.attrs({ className: 'Main' })`
   flex-wrap: nowrap;
   overscroll-behavior: none;
 `;
-
-const Section = styled.section`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-  font-size: 1.5em;
-  text-align: center;
-  box-sizing: border-box;
-  padding: 10px;
-`;
-
 // markup
 const App = () => {
   return (

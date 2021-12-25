@@ -20,28 +20,26 @@ export const Text36 = styled.span`
 `;
 
 export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 100%;
   background-color: #e3f6f5;
   padding: 10% 5%;
 `;
 
-export const Sports = styled(motion.div)<{ gridColumn: number }>`
-  grid-column: ${(props) => props.gridColumn};
+export const Sports = styled(motion.div)`
   background-color: #bae8e8;
   width: 335px;
   height: 307px;
   border-radius: 14px;
 `;
 
-export const SmallBusiness = styled(Sports)<{ gridColumn: number }>`
-  grid-column: ${(props) => props.gridColumn};
+export const SmallBusiness = styled(Sports)`
   background-color: white;
   align-self: center;
 `;
 
-export const Coding = styled(Sports)<{ gridColumn: number }>`
-  grid-column: ${(props) => props.gridColumn};
+export const Coding = styled(Sports)`
   background-color: #2d334a;
   align-self: flex-end;
 `;
@@ -49,6 +47,11 @@ export const Coding = styled(Sports)<{ gridColumn: number }>`
 export const Grid = styled(motion.div)`
   display: grid;
   justify-items: center;
-  grid-gap: 1fr;
-  height: 500px;
+  grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
+  grid-template-rows: 500px;
+  grid-gap: 30px;
+
+  @media screen and (max-width: ${'777px'}) {
+    grid-template-rows: 1fr;
+  }
 `;
