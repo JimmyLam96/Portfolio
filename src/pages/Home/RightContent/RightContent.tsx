@@ -1,9 +1,16 @@
 import { AnimationControls, Variants } from 'framer-motion';
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Profile, Border, Background, MoonDiv, WavesDiv } from './styles';
+import {
+  Profile,
+  DefaultBorder,
+  Background,
+  MoonDiv,
+  WavesDiv,
+} from './styles';
 import Moon from '../../../images/Moon.svg';
 import Waves from '../../../images/Waves.svg';
+import { SpringAnimation } from '../../../DefaultVariants';
 
 const BorderVariants = {
   initial: {
@@ -31,13 +38,8 @@ const container = {
 const IconVariants = {
   hidden: { opacity: 0, y: 500 },
   show: {
-    opacity: 1,
     y: 0,
-    transition: {
-      duration: 1.2,
-      type: 'spring',
-      ease: [0.6, 0.01, -0.05, 0.95],
-    },
+    ...SpringAnimation,
   },
 };
 
@@ -62,7 +64,7 @@ export default function Right({
         alt="profile picture"
         style={{ borderRadius: '25px', width: '300px', height: 'auto' }}
       />
-      <Border
+      <DefaultBorder
         initial="initial"
         variants={BorderVariants}
         animate={borderControls}

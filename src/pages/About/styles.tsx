@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { DefaultBorder } from '../Home/RightContent/styles';
 
 export const Header = styled.div`
   display: flex;
@@ -28,6 +29,7 @@ export const Content = styled.div`
 `;
 
 export const Sports = styled(motion.div)`
+  position: relative;
   background-color: #bae8e8;
   width: 335px;
   height: 307px;
@@ -44,6 +46,13 @@ export const Coding = styled(Sports)`
   align-self: flex-end;
 `;
 
+export const Border = styled(DefaultBorder)`
+  z-index: 0;
+  border-radius: 13px;
+  top: -8%;
+  left: -8%;
+`;
+
 export const Grid = styled(motion.div)`
   display: grid;
   justify-items: center;
@@ -54,4 +63,53 @@ export const Grid = styled(motion.div)`
   @media screen and (max-width: ${'777px'}) {
     grid-template-rows: 1fr;
   }
+`;
+
+export const YellowStairsContainerRight = styled(motion.div)`
+  position: absolute;
+  left: 90%;
+  top: 120%;
+`;
+
+export const YellowStairsContainerLeft = styled(motion.div)`
+  position: absolute;
+  left: 0;
+  top: -30%;
+`;
+
+export const PurplePolkaContainer = styled(motion.div)`
+  position: absolute;
+  left: -20%;
+  top: 85%;
+`;
+
+export const PurpleCircleContainer = styled(motion.div)`
+  position: absolute;
+  left: 85%;
+  top: -20%;
+`;
+
+export const HamburgerMenuContainer = styled(motion.div)`
+  position: absolute;
+  top: -40%;
+  left: 80%;
+`;
+
+export const MoonContainer = styled(motion.div)`
+  position: absolute;
+  top: -70%;
+  width: 89px;
+  height: 89px;
+`;
+
+export const YellowPolkaContainer = styled(motion.div)`
+  position: absolute;
+  top: -28%;
+  left: -17%;
+`;
+
+export const WavesContainer = styled(motion.div)`
+  position: absolute;
+  top: 130%;
+  left: 90%;
 `;

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import GlobalStyle from '../../styles/GlobalStyles';
-import Work from './Work/Work';
 import Home from './Home/Home';
 import About from './About/About';
 

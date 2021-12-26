@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---cache-dev-404-page-js",
     "path": "/dev-404-page/",
-    "result": {"data":{"allSiteFunction":{"nodes":[]},"allSitePage":{"nodes":[{"path":"/404.html"},{"path":"/404/"},{"path":"/"},{"path":"/About/About/"},{"path":"/About/styles/"},{"path":"/Home/Home/"},{"path":"/Home/styles/"},{"path":"/Work/Work/"},{"path":"/Work/styles/"},{"path":"/Home/RightContent/RightContent/"},{"path":"/Home/RightContent/styles/"},{"path":"/Home/LeftContent/LeftContent/"},{"path":"/Home/LeftContent/styles/"}]}},"pageContext":{}},
+    "result": {"data":{"allSiteFunction":{"nodes":[]},"allSitePage":{"nodes":[{"path":"/404.html"},{"path":"/404/"},{"path":"/"},{"path":"/About/About/"},{"path":"/About/styles/"},{"path":"/Home/Home/"},{"path":"/Home/styles/"},{"path":"/Work/Work/"},{"path":"/Work/styles/"},{"path":"/Home/LeftContent/LeftContent/"},{"path":"/Home/LeftContent/styles/"},{"path":"/Home/RightContent/RightContent/"},{"path":"/Home/RightContent/styles/"}]}},"pageContext":{}},
     "staticQueryHashes": []}

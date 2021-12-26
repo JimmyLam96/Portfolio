@@ -9,7 +9,7 @@ export const Profile = styled(motion.div)`
   z-index: 1;
 `;
 
-export const Border = styled(motion.div)`
+export const DefaultBorder = styled(motion.div)`
   position: absolute;
   width: 100%;
   height: 100%;
