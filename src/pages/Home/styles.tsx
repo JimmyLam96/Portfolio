@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import HomePageBG from '../../images/HomePageBG.svg';
 import { ScreenSizes } from '../../ScreenSizes';
 
-export const Content = styled.section`
+export const Content = styled.div`
   width: 100%;
   height: 100%;
   display: flex;

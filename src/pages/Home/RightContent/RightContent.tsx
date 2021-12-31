@@ -82,9 +82,6 @@ export default function Right({
         <WavesDiv variants={IconVariants}>
           <Waves />
         </WavesDiv>
-        {/* <PolkaDiv>
-          <Polka />
-        </PolkaDiv> */}
       </Background>
     </Profile>
   );

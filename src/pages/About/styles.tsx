@@ -6,7 +6,6 @@ export const Header = styled.div`
   display: flex;
   width: 100%;
   justify-content: flex-end;
-  margin-bottom: 50px;
 `;
 
 export const Text36 = styled.span`
@@ -20,12 +19,9 @@ export const Text36 = styled.span`
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
+export const Background = styled.div`
   width: 100%;
   background-color: #e3f6f5;
-  padding: 10% 5%;
 `;
 
 export const Sports = styled(motion.div)`
@@ -43,14 +39,15 @@ export const SmallBusiness = styled(Sports)`
 
 export const Coding = styled(Sports)`
   background-color: #2d334a;
-  align-self: flex-end;
+  z-index: 1;
 `;
 
 export const Border = styled(DefaultBorder)`
+  position: absolute;
   z-index: 0;
   border-radius: 13px;
-  top: -8%;
-  left: -8%;
+  /* top: 0; */
+  /* left: 0; */
 `;
 
 export const Grid = styled(motion.div)`
@@ -112,4 +109,20 @@ export const WavesContainer = styled(motion.div)`
   position: absolute;
   top: 130%;
   left: 90%;
+`;
+
+export const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  padding: 5%;
+  width: 100%;
+  max-width: 1800px;
+`;
+
+export const CodingBorder = styled(motion.div)`
+  display: flex;
+  position: relative;
+  align-self: flex-end;
+  width: fit-content;
 `;

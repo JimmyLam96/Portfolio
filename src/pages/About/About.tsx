@@ -1,9 +1,9 @@
-import { motion, useAnimation } from 'framer-motion';
+import { useAnimation } from 'framer-motion';
 import React from 'react';
 import {
   Header,
   Text36,
-  Content,
+  Background,
   Sports,
   Grid,
   Coding,
@@ -17,6 +17,8 @@ import {
   MoonContainer,
   YellowPolkaContainer,
   WavesContainer,
+  MainContainer,
+  CodingBorder,
 } from './styles';
 import PurpleCircle from '../../images/PurpleCircle.svg';
 import YellowWaves from '../../images/YellowWaves.svg';
@@ -50,6 +52,17 @@ const BlockVariants = {
   },
 };
 
+const BorderVariants = {
+  initial: {
+    x: -20,
+    y: -20,
+  },
+  hover: {
+    x: -30,
+    y: -30,
+  },
+};
+
 const IconVariants = {
   slideInFromRight: {
     initial: {
@@ -74,63 +87,80 @@ const IconVariants = {
 };
 
 export default function About() {
-  const controls = useAnimation();
+  const gridControls = useAnimation();
+  const borderControls = useAnimation();
 
   return (
-    <Content>
-      <Header>
-        <Text36>about me</Text36>
-      </Header>
-      <Grid
-        initial="initial"
-        whileInView="show"
-        variants={ParentVariants}
-        animate={controls}
-      >
-        <Sports variants={BlockVariants}>
-          test
-          <YellowStairsContainerLeft variants={IconVariants.slideInFromLeft}>
-            <YellowWaves />
-          </YellowStairsContainerLeft>
-          <PurpleCircleContainer variants={IconVariants.slideInFromRight}>
-            <PurpleCircle />
-          </PurpleCircleContainer>
-          <PurplePolkaContainer variants={IconVariants.slideInFromLeft}>
-            <PurplePolka />
-          </PurplePolkaContainer>
-          <YellowStairsContainerRight
-            variants={{
-              ...IconVariants.slideInFromLeft,
-              initial: {
-                opacity: 0,
-                x: 50,
-                rotate: 270,
-              },
+    <Background>
+      <MainContainer>
+        <Header>
+          <Text36>about me</Text36>
+        </Header>
+        <Grid
+          initial="initial"
+          whileInView="show"
+          variants={ParentVariants}
+          animate={gridControls}
+          viewport={{ once: true }}
+        >
+          <Sports variants={BlockVariants}>
+            test
+            <YellowStairsContainerLeft variants={IconVariants.slideInFromLeft}>
+              <YellowWaves />
+            </YellowStairsContainerLeft>
+            <PurpleCircleContainer variants={IconVariants.slideInFromRight}>
+              <PurpleCircle />
+            </PurpleCircleContainer>
+            <PurplePolkaContainer variants={IconVariants.slideInFromLeft}>
+              <PurplePolka />
+            </PurplePolkaContainer>
+            <YellowStairsContainerRight
+              variants={{
+                ...IconVariants.slideInFromLeft,
+                initial: {
+                  opacity: 0,
+                  x: 50,
+                  rotate: 270,
+                },
+              }}
+            >
+              <YellowWaves />
+            </YellowStairsContainerRight>
+          </Sports>
+          <CodingBorder
+            onHoverStart={() => {
+              borderControls.start(BorderVariants.hover);
             }}
+            onHoverEnd={() => {
+              borderControls.start(BorderVariants.initial);
+            }}
+            variants={BlockVariants}
           >
-            <YellowWaves />
-          </YellowStairsContainerRight>
-        </Sports>
-
-        <Coding variants={BlockVariants}>
-          <Border />
-          <HamburgerMenuContainer variants={IconVariants.slideInFromRight}>
-            <HamburgerMenu />
-          </HamburgerMenuContainer>
-          <MoonContainer variants={IconVariants.slideInFromLeft}>
-            <Moon />
-          </MoonContainer>
-        </Coding>
-        <SmallBusiness variants={BlockVariants}>
-          test
-          <YellowPolkaContainer variants={IconVariants.slideInFromLeft}>
-            <YellowPolka />
-          </YellowPolkaContainer>
-          <WavesContainer variants={IconVariants.slideInFromRight}>
-            <DarkBlueWaves />
-          </WavesContainer>
-        </SmallBusiness>
-      </Grid>
-    </Content>
+            <Coding>
+              <HamburgerMenuContainer variants={IconVariants.slideInFromRight}>
+                <HamburgerMenu />
+              </HamburgerMenuContainer>
+              <MoonContainer variants={IconVariants.slideInFromLeft}>
+                <Moon />
+              </MoonContainer>
+            </Coding>
+            <Border
+              initial="initial"
+              variants={BorderVariants}
+              animate={borderControls}
+            />
+          </CodingBorder>
+          <SmallBusiness variants={BlockVariants}>
+            test
+            <YellowPolkaContainer variants={IconVariants.slideInFromLeft}>
+              <YellowPolka />
+            </YellowPolkaContainer>
+            <WavesContainer variants={IconVariants.slideInFromRight}>
+              <DarkBlueWaves />
+            </WavesContainer>
+          </SmallBusiness>
+        </Grid>
+      </MainContainer>
+    </Background>
   );
 }
