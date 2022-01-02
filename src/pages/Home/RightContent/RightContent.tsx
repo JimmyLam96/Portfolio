@@ -10,7 +10,7 @@ import {
 } from './styles';
 import Moon from '../../../images/Moon.svg';
 import Waves from '../../../images/Waves.svg';
-import { SpringAnimation } from '../../../DefaultVariants';
+import { SpringAnimation } from '../../../config/DefaultVariants';
 
 const BorderVariants = {
   initial: {

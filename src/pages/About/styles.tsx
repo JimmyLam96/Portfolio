@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { DefaultColors } from '../../config/DefaultColors';
+import { DefaultText18 } from '../../config/DefaulTextSizes';
 import { DefaultBorder } from '../Home/RightContent/styles';
 
 export const Header = styled.div`
@@ -21,24 +23,32 @@ export const Text36 = styled.span`
 
 export const Background = styled.div`
   width: 100%;
-  background-color: #e3f6f5;
+  background-color: ${DefaultColors.Secondary};
+  display: flex;
+  justify-content: center;
+  height: 100vh;
 `;
 
-export const Sports = styled(motion.div)`
+export const Occupation = styled(motion.div)`
   position: relative;
-  background-color: #bae8e8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: ${DefaultColors.Tertairy};
   width: 335px;
-  height: 307px;
+  height: 335px;
   border-radius: 14px;
+  padding: 1rem;
+  gap: 10px;
 `;
 
-export const SmallBusiness = styled(Sports)`
+export const Personal = styled(Occupation)`
   background-color: white;
   align-self: center;
 `;
 
-export const Coding = styled(Sports)`
-  background-color: #2d334a;
+export const Coding = styled(Occupation)`
+  background-color: ${DefaultColors.Paragraph};
   z-index: 1;
 `;
 
@@ -95,6 +105,7 @@ export const HamburgerMenuContainer = styled(motion.div)`
 export const MoonContainer = styled(motion.div)`
   position: absolute;
   top: -70%;
+  right: 70%;
   width: 89px;
   height: 89px;
 `;
@@ -107,7 +118,7 @@ export const YellowPolkaContainer = styled(motion.div)`
 
 export const WavesContainer = styled(motion.div)`
   position: absolute;
-  top: 130%;
+  top: 115%;
   left: 90%;
 `;
 
@@ -118,6 +129,8 @@ export const MainContainer = styled.div`
   padding: 5%;
   width: 100%;
   max-width: 1800px;
+  height: 100%;
+  justify-content: space-evenly;
 `;
 
 export const CodingBorder = styled(motion.div)`
@@ -125,4 +138,12 @@ export const CodingBorder = styled(motion.div)`
   position: relative;
   align-self: flex-end;
   width: fit-content;
+`;
+
+export const CodingText = styled(DefaultText18)`
+  color: ${DefaultColors.Secondary};
+`;
+
+export const PersonalText = styled(DefaultText18)`
+  color: ${DefaultColors.Paragraph};
 `;

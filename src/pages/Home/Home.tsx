@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { forwardRef } from 'react';
 import Left from './LeftContent/LeftContent';
 import Navbar from '../../components/Navbar/Navbar';
 import { BG, Content, MainContainer, InnerContent } from './styles';
