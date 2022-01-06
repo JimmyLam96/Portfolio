@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
-import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { ScreenSizes } from '../../config/ScreenSizes';
-import HomePageBG from '../../images/HomePageBG.svg';
+import HomePageBG from '../../images/SVG/HomePageBG.svg';
 
 export const Content = styled.div`
   width: 100%;

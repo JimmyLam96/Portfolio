@@ -1,5 +1,5 @@
 {
-  "include": ["./src/**/*", "custom.d.ts"],
+  "include": ["./src/**/*", "custom.d.ts", "styles"],
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",

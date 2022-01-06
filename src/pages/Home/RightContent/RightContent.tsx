@@ -1,4 +1,4 @@
-import { AnimationControls, Variants } from 'framer-motion';
+import { AnimationControls } from 'framer-motion';
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import {
@@ -8,8 +8,8 @@ import {
   MoonDiv,
   WavesDiv,
 } from './styles';
-import Moon from '../../../images/Moon.svg';
-import Waves from '../../../images/Waves.svg';
+import Moon from '../../../images/SVG/Moon.svg';
+import Waves from '../../../images/SVG/Waves.svg';
 import { SpringAnimation } from '../../../config/DefaultVariants';
 
 const BorderVariants = {

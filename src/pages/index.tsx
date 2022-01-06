@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import GlobalStyle from '../../styles/GlobalStyles';
 import Home from './Home/Home';
 import About from './About/About';
+import Work from './Work/Work';
 
 // styles
 const Main = styled.div.attrs({ className: 'Main' })`
@@ -22,6 +23,7 @@ const App = () => {
       <title>Jimmy Lam</title>
       <Home />
       <About />
+      <Work />
     </Main>
   );
 };

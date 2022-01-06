@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ScreenSizes } from '../../config/ScreenSizes';
-import Github from '../../images/Github.svg';
-import Linkedin from '../../images/Linkedin.svg';
+import Github from '../../images/SVG/Github.svg';
+import Linkedin from '../../images/SVG/Linkedin.svg';
 
 const Container = styled.div`
   display: flex;

@@ -22,13 +22,13 @@ import {
   CodingText,
   PersonalText,
 } from './styles';
-import PurpleCircle from '../../images/PurpleCircle.svg';
-import YellowWaves from '../../images/YellowWaves.svg';
-import PurplePolka from '../../images/PurplePolka.svg';
-import HamburgerMenu from '../../images/HamburgerMenu.svg';
-import DarkBlueWaves from '../../images/DarkBlueWaves.svg';
-import Moon from '../../images/Moon.svg';
-import YellowPolka from '../../images/YellowPolka.svg';
+import PurpleCircle from '../../images/SVG/PurpleCircle.svg';
+import YellowWaves from '../../images/SVG/YellowWaves.svg';
+import PurplePolka from '../../images/SVG/PurplePolka.svg';
+import HamburgerMenu from '../../images/SVG/HamburgerMenu.svg';
+import DarkBlueWaves from '../../images/SVG/DarkBlueWaves.svg';
+import Moon from '../../images/SVG/Moon.svg';
+import YellowPolka from '../../images/SVG/YellowPolka.svg';
 import { StaticImage } from 'gatsby-plugin-image';
 import { DefaultText18 } from '../../config/DefaulTextSizes';
 import { SpringAnimation } from '../../config/DefaultVariants';
@@ -109,7 +109,7 @@ export default function About() {
         >
           <Occupation variants={BlockVariants}>
             <StaticImage
-              src="../../images/RockstarIcon.png"
+              src="../../images/PNG/RockstarIcon.png"
               alt="Rockstar IT Logo"
               style={{ width: '50%', height: 'auto' }}
             />
@@ -152,7 +152,7 @@ export default function About() {
           >
             <Coding>
               <StaticImage
-                src="../../images/CodingMe.png"
+                src="../../images/PNG/CodingMe.png"
                 alt="Rockstar IT Logo"
                 style={{ width: '100%', height: 'auto', borderRadius: '10px' }}
               />
@@ -176,7 +176,7 @@ export default function About() {
           </CodingBorder>
           <Personal variants={BlockVariants}>
             <StaticImage
-              src="../../images/TerschellingMarathon.png"
+              src="../../images/PNG/TerschellingMarathon.png"
               alt="Terschelling marathon picture"
               style={{ width: '100%', height: 'auto', borderRadius: '10px' }}
             />

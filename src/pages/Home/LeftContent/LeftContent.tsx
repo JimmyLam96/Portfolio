@@ -8,8 +8,8 @@ import {
 } from './styles';
 import Button from '../../../components/Button/Button';
 import { AnimationControls } from 'framer-motion';
-import WaveEmoji from '../../../images/WaveEmoji.svg';
-import Circle from '../../../images/Circle.svg';
+import WaveEmoji from '../../../images/SVG/WaveEmoji.svg';
+import Circle from '../../../images/SVG/Circle.svg';
 
 const emojiVariants = {
   initial: { opacity: 0 },

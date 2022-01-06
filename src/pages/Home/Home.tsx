@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Left from './LeftContent/LeftContent';
 import Navbar from '../../components/Navbar/Navbar';
 import { BG, Content, MainContainer, InnerContent } from './styles';
-import Triangle from '../../images/Triangle.svg';
+import Triangle from '../../images/SVG/Triangle.svg';
 import { useAnimation } from 'framer-motion';
 import Right from './RightContent/RightContent';
 
