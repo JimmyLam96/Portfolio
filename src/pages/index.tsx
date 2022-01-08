@@ -4,6 +4,7 @@ import GlobalStyle from '../../styles/GlobalStyles';
 import Home from './Home/Home';
 import About from './About/About';
 import Work from './Work/Work';
+import { ShowcaseProvider } from '../providers/ShowcaseProvider/ShowcaseProvider';
 
 // styles
 const Main = styled.div.attrs({ className: 'Main' })`
@@ -18,13 +19,15 @@ const Main = styled.div.attrs({ className: 'Main' })`
 // markup
 const App = () => {
   return (
-    <Main>
-      <GlobalStyle />
-      <title>Jimmy Lam</title>
-      <Home />
-      <About />
-      <Work />
-    </Main>
+    <ShowcaseProvider>
+      <Main>
+        <GlobalStyle />
+        <title>Jimmy Lam</title>
+        <Home />
+        <About />
+        <Work />
+      </Main>
+    </ShowcaseProvider>
   );
 };
 

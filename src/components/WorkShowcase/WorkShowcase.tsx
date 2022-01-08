@@ -1,28 +1,34 @@
-import { AnimatePresence, motion, useAnimation } from 'framer-motion';
+import {
+  AnimatePresence,
+  AnimationControls,
+  motion,
+  useAnimation,
+} from 'framer-motion';
 import { StaticImage } from 'gatsby-plugin-image';
-import React, { createRef, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { DefaultColors } from '../../config/DefaultColors';
 import { DefaultText14 } from '../../config/DefaulTextSizes';
+import { useShowcase } from '../../providers/ShowcaseProvider/ShowcaseProvider';
+import { TypeExpandStates } from '../../providers/ShowcaseProvider/types';
 import {
   RoundedRectangle,
   SubTitle,
   Title,
   Content,
-  ContentBounds,
   ImageContainer,
 } from './styles';
 
 const ParentVariants = {
   start: {
-    y: 200,
-    x: 200,
+    y: 0,
+    x: 0,
     height: 220,
     width: 580,
     transition: { duration: 0.5, staggerChildren: 0.5 },
   },
   end: {
-    x: 0,
-    y: 0,
+    x: '-40%',
+    y: '-50%',
     height: 375,
     width: 700,
     transition: { duration: 0.5, staggerChildren: 0.5 },
@@ -62,19 +68,19 @@ export const WorkShowcase = ({
   title,
   shortText,
   longText,
-  onClick,
+  id,
 }: {
   title: string;
   shortText: string;
   longText: string;
-  onClick: (input: string) => void;
+  id: TypeExpandStates;
 }) => {
-  const [expand, setExpand] = useState<0 | 1 | 2>(0);
+  const { expand, setExpand } = useShowcase();
   const controls = useAnimation();
 
   useEffect(() => {
-    if (expand === 1) controls.start('start');
-    if (expand === 2) controls.start('end');
+    if (expand === id) controls.start('end');
+    else controls.start('start');
   }, [expand]);
 
   return (
@@ -84,8 +90,8 @@ export const WorkShowcase = ({
       initial="start"
       animate={controls}
       onClick={() => {
-        if (expand === 2 || expand === 0) setExpand(1);
-        else setExpand(2);
+        if (expand === id) setExpand(-1);
+        else setExpand(id);
       }}
     >
       <ImageContainer
