@@ -1,16 +1,16 @@
 import { AnimateSharedLayout, useAnimation } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import { WorkShowcase } from '../../components/WorkShowcase/WorkShowcase';
+import { ShowcaseCard } from '../../components/WorkShowcase/WorkShowcase';
 import { DefaultText18 } from '../../config/DefaulTextSizes';
-import { Content, ShowCaseContainer } from './styles';
+import { Content, ShowcaseContainer } from './styles';
 
 const Work = () => {
   return (
     <Content className="Content">
       <AnimateSharedLayout>
         <DefaultText18>work</DefaultText18>
-        <ShowCaseContainer>
-          <WorkShowcase
+        <ShowcaseContainer>
+          <ShowcaseCard
             title="The Sugar Look"
             shortText="Responsive web application where users can read, write testimonials
           about other users and communicate with each other. Made with React,
@@ -20,7 +20,7 @@ const Work = () => {
           Typescript and CSS"
             id={0}
           />
-          <WorkShowcase
+          <ShowcaseCard
             title="The Sugar Look"
             shortText="Responsive web application where users can read, write testimonials
           about other users and communicate with each other. Made with React,
@@ -30,7 +30,7 @@ const Work = () => {
           Typescript and CSS"
             id={1}
           />
-          <WorkShowcase
+          <ShowcaseCard
             title="The Sugar Look"
             shortText="Responsive web application where users can read, write testimonials
           about other users and communicate with each other. Made with React,
@@ -40,7 +40,7 @@ const Work = () => {
           Typescript and CSS"
             id={2}
           />
-          <WorkShowcase
+          <ShowcaseCard
             title="The Sugar Look"
             shortText="Responsive web application where users can read, write testimonials
           about other users and communicate with each other. Made with React,
@@ -50,7 +50,7 @@ const Work = () => {
           Typescript and CSS"
             id={3}
           />
-        </ShowCaseContainer>
+        </ShowcaseContainer>
       </AnimateSharedLayout>
     </Content>
   );

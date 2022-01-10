@@ -67,7 +67,7 @@ export const Grid = styled(motion.div)`
   grid-template-rows: 500px;
   grid-gap: 30px;
 
-  @media screen and (max-width: ${'777px'}) {
+  @media screen and (max-width: 777px) {
     grid-template-rows: 1fr;
   }
 `;

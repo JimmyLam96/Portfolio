@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { DefaultColors } from '../../config/DefaultColors';
+import { ScreenSizes } from '../../config/ScreenSizes';
 
 export const Content = styled.section`
   width: 100%;
@@ -17,10 +18,15 @@ export const Content = styled.section`
   background-color: ${DefaultColors.Tertairy};
 `;
 
-export const ShowCaseContainer = styled(motion.div)`
-  display: grid;
-  width: 75%;
-  grid-gap: 50px;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(580px, 1fr));
+export const ShowcaseContainer = styled(motion.div)`
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  position: relative;
+  height: 80%;
+  width: 90%;
+
+  @media screen and (max-width: ${ScreenSizes.LAPTOP}) {
+    width: 100%;
+  }
 `;

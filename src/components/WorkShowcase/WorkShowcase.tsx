@@ -1,11 +1,6 @@
-import {
-  AnimatePresence,
-  AnimationControls,
-  motion,
-  useAnimation,
-} from 'framer-motion';
+import { AnimatePresence, useAnimation } from 'framer-motion';
 import { StaticImage } from 'gatsby-plugin-image';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import { DefaultColors } from '../../config/DefaultColors';
 import { DefaultText14 } from '../../config/DefaulTextSizes';
 import { useShowcase } from '../../providers/ShowcaseProvider/ShowcaseProvider';
@@ -14,35 +9,18 @@ import {
   RoundedRectangle,
   SubTitle,
   Title,
-  Content,
+  Overlay,
   ImageContainer,
+  Card,
+  CardContent,
 } from './styles';
-
-const ParentVariants = {
-  start: {
-    y: 0,
-    x: 0,
-    height: 220,
-    width: 580,
-    transition: { duration: 0.5, staggerChildren: 0.5 },
-  },
-  end: {
-    x: '-40%',
-    y: '-50%',
-    height: 375,
-    width: 700,
-    transition: { duration: 0.5, staggerChildren: 0.5 },
-  },
-};
 
 const RectangleVariants = {
   start: {
-    width: 350,
     borderRadius: '13px',
     transition: { duration: 0.5 },
   },
   end: {
-    width: 465,
     borderRadius: '0 13px 13px 0',
     transition: { duration: 0.5 },
   },
@@ -50,21 +28,19 @@ const RectangleVariants = {
 
 const ImageVariants = {
   start: {
-    flexGrow: 0,
     borderRadius: '13px',
     borderShadow: 'none',
-    transition: { duration: 0.5 },
+    transition: { duration: 0.1 },
   },
   end: {
-    flexGrow: 1,
     backgroundColor: DefaultColors.Button,
     borderRadius: '13px 0 0 13px',
     boxShadow: '0px 7px 50px 2px #0000001a',
-    transition: { duration: 0.5 },
+    transition: { duration: 0.1 },
   },
 };
 
-export const WorkShowcase = ({
+export const ShowcaseCard = ({
   title,
   shortText,
   longText,
@@ -84,37 +60,49 @@ export const WorkShowcase = ({
   }, [expand]);
 
   return (
-    <Content
-      layout
-      variants={ParentVariants}
-      initial="start"
-      animate={controls}
+    <Card
       onClick={() => {
         if (expand === id) setExpand(-1);
         else setExpand(id);
       }}
     >
-      <ImageContainer
-        variants={ImageVariants}
-        initial="start"
-        animate={controls}
+      <Overlay
+        layout
+        transition={{ transition: { duration: 2 } }}
+        isSelected={expand === id}
       >
-        <StaticImage
-          src="../../images/PNG/TSL.png"
-          alt="The Sugar Look screenshots"
-          style={{
-            width: '190px',
-            height: '220px',
-            borderRadius: '13px',
-            overflow: 'hidden',
-          }}
-        />
-      </ImageContainer>
-      <RoundedRectangle variants={RectangleVariants} animate={controls}>
-        <Title>{title}</Title>
-        <DefaultText14>{shortText}</DefaultText14>
-        <SubTitle>Team Rockstar IT</SubTitle>
-      </RoundedRectangle>
-    </Content>
+        <CardContent
+          isSelected={expand === id}
+          layout
+          transition={{ transition: { duration: 2 } }}
+        >
+          <ImageContainer
+            variants={ImageVariants}
+            initial="start"
+            animate={controls}
+            layout
+            transition={{ transition: { duration: 2 } }}
+          >
+            <StaticImage
+              src="../../images/PNG/TSL.png"
+              alt="The Sugar Look screenshots"
+              style={{
+                width: '100%',
+                height: '220px',
+                borderRadius: '13px',
+                overflow: 'hidden',
+              }}
+            />
+          </ImageContainer>
+          <RoundedRectangle variants={RectangleVariants} animate={controls}>
+            <Title>{title}</Title>
+            <DefaultText14>{shortText}</DefaultText14>
+            <AnimatePresence>
+              <SubTitle>Team Rockstar IT</SubTitle>
+            </AnimatePresence>
+          </RoundedRectangle>
+        </CardContent>
+      </Overlay>
+    </Card>
   );
 };
