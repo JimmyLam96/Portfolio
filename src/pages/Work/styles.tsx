@@ -21,7 +21,6 @@ export const Content = styled.section`
 export const ShowcaseContainer = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
-  overflow: auto;
   position: relative;
   height: 80%;
   width: 90%;

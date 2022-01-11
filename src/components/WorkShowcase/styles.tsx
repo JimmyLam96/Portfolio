@@ -5,13 +5,15 @@ import { DefaultColors } from '../../config/DefaultColors';
 import { DefaultText24 } from '../../config/DefaulTextSizes';
 import { ScreenSizes } from '../../config/ScreenSizes';
 
-export const RoundedRectangle = styled(motion.div)`
+export const RoundedRectangle = styled(motion.div)<{ isSelected: boolean }>`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: ${(props) =>
+    props.isSelected ? 'space-around' : 'space-evenly'};
   padding: 15px 25px;
   border-radius: 13px;
-  background-color: ${DefaultColors.Secondary};
+  background-color: ${(props) =>
+    props.isSelected ? '#FFFFFF' : DefaultColors.Secondary};
   box-shadow: 0px 7px 50px 2px #0000001a;
   max-width: 60%;
 `;
@@ -45,6 +47,7 @@ export const ContentBounds = styled.div`
 `;
 
 export const CardContent = styled(motion.div)<{ isSelected: boolean }>`
+  position: relative;
   width: 100%;
   max-width: 700px;
   gap: 0;
@@ -84,4 +87,31 @@ export const Overlay = styled(motion.div)<{ isSelected: boolean }>`
       z-index: 2;
       background: rgba(0, 0, 0, 0.2);
     `}
+`;
+
+export const HR = styled.hr`
+  width: 100%;
+  border: none;
+  height: 2px;
+  background-color: ${DefaultColors.Secondary};
+`;
+
+export const Technology = styled.div`
+  background-color: ${DefaultColors.Secondary};
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: ${DefaultColors.Paragraph};
+`;
+
+export const TechnologyContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+`;
+
+export const FooterContent = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 `;

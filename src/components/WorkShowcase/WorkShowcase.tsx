@@ -5,6 +5,7 @@ import { DefaultColors } from '../../config/DefaultColors';
 import { DefaultText14 } from '../../config/DefaulTextSizes';
 import { useShowcase } from '../../providers/ShowcaseProvider/ShowcaseProvider';
 import { TypeExpandStates } from '../../providers/ShowcaseProvider/types';
+import ExpandedFooter from './ExpandedFooter';
 import {
   RoundedRectangle,
   SubTitle,
@@ -14,6 +15,7 @@ import {
   Card,
   CardContent,
 } from './styles';
+import Exit from '../../images/SVG/Exit.svg';
 
 const RectangleVariants = {
   start: {
@@ -45,11 +47,13 @@ export const ShowcaseCard = ({
   shortText,
   longText,
   id,
+  technologies,
 }: {
   title: string;
   shortText: string;
   longText: string;
   id: TypeExpandStates;
+  technologies: string[];
 }) => {
   const { expand, setExpand } = useShowcase();
   const controls = useAnimation();
@@ -62,8 +66,7 @@ export const ShowcaseCard = ({
   return (
     <Card
       onClick={() => {
-        if (expand === id) setExpand(-1);
-        else setExpand(id);
+        if (expand !== id) setExpand(id);
       }}
     >
       <Overlay
@@ -76,6 +79,14 @@ export const ShowcaseCard = ({
           layout
           transition={{ transition: { duration: 2 } }}
         >
+          {expand === id && (
+            <Exit
+              onClick={() => {
+                if (expand === id) setExpand(-1);
+              }}
+              style={{ position: 'absolute', top: 15, right: 50 }}
+            />
+          )}
           <ImageContainer
             variants={ImageVariants}
             initial="start"
@@ -94,12 +105,16 @@ export const ShowcaseCard = ({
               }}
             />
           </ImageContainer>
-          <RoundedRectangle variants={RectangleVariants} animate={controls}>
+          <RoundedRectangle
+            variants={RectangleVariants}
+            animate={controls}
+            isSelected={expand === id}
+          >
             <Title>{title}</Title>
             <DefaultText14>{shortText}</DefaultText14>
-            <AnimatePresence>
-              <SubTitle>Team Rockstar IT</SubTitle>
-            </AnimatePresence>
+            {expand === id && <DefaultText14>{longText}</DefaultText14>}
+            {expand !== id && <SubTitle>Team Rockstar IT</SubTitle>}
+            {expand === id && <ExpandedFooter technologies={technologies} />}
           </RoundedRectangle>
         </CardContent>
       </Overlay>

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { ShowcaseCard } from '../../components/WorkShowcase/WorkShowcase';
 import { DefaultText18 } from '../../config/DefaulTextSizes';
 import { Content, ShowcaseContainer } from './styles';
+import WorkInfo from './workInfo';
 
 const Work = () => {
   return (
@@ -11,44 +12,32 @@ const Work = () => {
         <DefaultText18>work</DefaultText18>
         <ShowcaseContainer>
           <ShowcaseCard
-            title="The Sugar Look"
-            shortText="Responsive web application where users can read, write testimonials
-          about other users and communicate with each other. Made with React,
-          Typescript and CSS"
-            longText="Responsive web application where users can read, write testimonials
-          about other users and communicate with each other. Made with React,
-          Typescript and CSS"
+            title={WorkInfo.TSL.title}
+            shortText={WorkInfo.TSL.shortText}
+            longText={WorkInfo.TSL.longText}
             id={0}
+            technologies={WorkInfo.TSL.technologies}
           />
           <ShowcaseCard
-            title="The Sugar Look"
-            shortText="Responsive web application where users can read, write testimonials
-          about other users and communicate with each other. Made with React,
-          Typescript and CSS"
-            longText="Responsive web application where users can read, write testimonials
-          about other users and communicate with each other. Made with React,
-          Typescript and CSS"
+            title={WorkInfo.TSL.title}
+            shortText={WorkInfo.TSL.shortText}
+            longText={WorkInfo.TSL.longText}
             id={1}
+            technologies={WorkInfo.TSL.technologies}
           />
           <ShowcaseCard
-            title="The Sugar Look"
-            shortText="Responsive web application where users can read, write testimonials
-          about other users and communicate with each other. Made with React,
-          Typescript and CSS"
-            longText="Responsive web application where users can read, write testimonials
-          about other users and communicate with each other. Made with React,
-          Typescript and CSS"
+            title={WorkInfo.TSL.title}
+            shortText={WorkInfo.TSL.shortText}
+            longText={WorkInfo.TSL.longText}
             id={2}
+            technologies={WorkInfo.TSL.technologies}
           />
           <ShowcaseCard
-            title="The Sugar Look"
-            shortText="Responsive web application where users can read, write testimonials
-          about other users and communicate with each other. Made with React,
-          Typescript and CSS"
-            longText="Responsive web application where users can read, write testimonials
-          about other users and communicate with each other. Made with React,
-          Typescript and CSS"
+            title={WorkInfo.TSL.title}
+            shortText={WorkInfo.TSL.shortText}
+            longText={WorkInfo.TSL.longText}
             id={3}
+            technologies={WorkInfo.TSL.technologies}
           />
         </ShowcaseContainer>
       </AnimateSharedLayout>
