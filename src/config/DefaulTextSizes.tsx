@@ -8,6 +8,7 @@ export const DefaultText36 = styled.h1`
   line-height: 45px;
   letter-spacing: 0em;
   text-align: left;
+  text-shadow: 0px 4px 4px 0px #00000040;
 `;
 
 export const DefaultText24 = styled.h2`

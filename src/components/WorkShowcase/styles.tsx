@@ -52,18 +52,20 @@ export const CardContent = styled(motion.div)<{ isSelected: boolean }>`
   max-width: 700px;
   gap: 0;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  cursor: pointer;
   ${(props) =>
     props.isSelected &&
     css`
       height: 375px;
       justify-content: center;
+      cursor: auto;
     `}
 `;
 
 export const Card = styled.div`
-  flex: 0 0 50%;
-  padding: 10px;
+  flex: 0 0 45%;
+
   @media only screen and (max-width: ${ScreenSizes.LAPTOP}) {
     flex: 1 0 100%;
   }

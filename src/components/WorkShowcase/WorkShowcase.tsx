@@ -71,13 +71,13 @@ export const ShowcaseCard = ({
     >
       <Overlay
         layout
-        transition={{ transition: { duration: 2 } }}
+        transition={{ transition: { duration: 0.5 } }}
         isSelected={expand === id}
       >
         <CardContent
           isSelected={expand === id}
           layout
-          transition={{ transition: { duration: 2 } }}
+          transition={{ transition: { duration: 0.5 } }}
         >
           {expand === id && (
             <Exit
@@ -92,7 +92,7 @@ export const ShowcaseCard = ({
             initial="start"
             animate={controls}
             layout
-            transition={{ transition: { duration: 2 } }}
+            transition={{ transition: { duration: 0.5 } }}
           >
             <StaticImage
               src="../../images/PNG/TSL.png"
