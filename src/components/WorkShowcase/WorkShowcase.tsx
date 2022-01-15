@@ -11,6 +11,7 @@ import {
   SubTitle,
   Title,
   Overlay,
+  ImageBackground,
   ImageContainer,
   Card,
   CardContent,
@@ -87,24 +88,26 @@ export const ShowcaseCard = ({
               style={{ position: 'absolute', top: 15, right: 50 }}
             />
           )}
-          <ImageContainer
+          <ImageBackground
             variants={ImageVariants}
             initial="start"
             animate={controls}
             layout
             transition={{ transition: { duration: 0.5 } }}
           >
-            <StaticImage
-              src="../../images/PNG/TSL.png"
-              alt="The Sugar Look screenshots"
-              style={{
-                width: '100%',
-                height: '220px',
-                borderRadius: '13px',
-                overflow: 'hidden',
-              }}
-            />
-          </ImageContainer>
+            <ImageContainer isSelected={expand === id}>
+              <StaticImage
+                src="../../images/PNG/TSL.png"
+                alt="The Sugar Look screenshots"
+                style={{
+                  width: '100%',
+                  height: '220px',
+                  borderRadius: '13px',
+                  overflow: 'hidden',
+                }}
+              />
+            </ImageContainer>
+          </ImageBackground>
           <RoundedRectangle
             variants={RectangleVariants}
             animate={controls}

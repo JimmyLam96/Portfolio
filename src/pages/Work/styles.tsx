@@ -8,6 +8,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: relative;
   gap: 30px;
   height: 70%;
   max-width: 1400px;

@@ -27,12 +27,22 @@ export const SubTitle = styled(DefaultText24)`
   color: ${DefaultColors.Tertairy};
 `;
 
-export const ImageContainer = styled(motion.div)`
+export const ImageBackground = styled(motion.div)`
   display: flex;
   justify-content: center;
+  align-items: center;
   overflow: hidden;
   max-width: 30%;
   z-index: 1;
+`;
+
+export const ImageContainer = styled.div<{ isSelected: boolean }>`
+  width: 100%;
+  ${(props) =>
+    props.isSelected &&
+    css`
+      width: 85%;
+    `}
 `;
 
 export const ContentBounds = styled.div`
