@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { ScreenSizes } from '../../config/ScreenSizes';
 import Github from '../../images/SVG/Github.svg';
 import Linkedin from '../../images/SVG/Linkedin.svg';
+import { Link } from 'gatsby';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const Container = styled.div`
   display: flex;
@@ -25,6 +27,8 @@ const ListItem = styled.li<{ gridColumn: number }>`
   letter-spacing: 0em;
   text-align: left;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
   grid-column: ${(props) => props.gridColumn};
 `;
 
@@ -53,9 +57,15 @@ export default function Navbar() {
   return (
     <Container>
       <LinkList>
-        <ListItem gridColumn={1}>work</ListItem>
-        <ListItem gridColumn={2}>about</ListItem>
-        <ListItem gridColumn={3}>contact</ListItem>
+        <ListItem gridColumn={1} onClick={() => scrollTo('#work')}>
+          work
+        </ListItem>
+        <ListItem gridColumn={2} onClick={() => scrollTo('#about')}>
+          about
+        </ListItem>
+        <ListItem gridColumn={3} onClick={() => scrollTo('#contact')}>
+          contact
+        </ListItem>
       </LinkList>
       <IconContainer>
         <Github style={{ cursor: 'pointer', gridColumn: 1 }} />

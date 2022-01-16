@@ -6,7 +6,7 @@ import Triangle from '../../images/SVG/Triangle.svg';
 import { useAnimation } from 'framer-motion';
 import Right from './RightContent/RightContent';
 
-const HomePage = () => {
+const HomePage = ({ id }: { id: string }) => {
   const handControls = useAnimation();
   const iconControls = useAnimation();
   const borderControls = useAnimation();
@@ -24,7 +24,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <Content className="page">
+    <Content id={id}>
       <MainContainer>
         <Navbar />
         <InnerContent>

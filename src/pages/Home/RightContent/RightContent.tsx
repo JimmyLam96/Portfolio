@@ -60,7 +60,7 @@ export default function Right({
       }}
     >
       <StaticImage
-        src="../../..//images/photo.png"
+        src="../../../images/PNG/photo.png"
         alt="profile picture"
         style={{ borderRadius: '25px', width: '300px', height: 'auto' }}
       />

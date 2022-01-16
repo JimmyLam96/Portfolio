@@ -5,9 +5,9 @@ import Icons from './Icons';
 import { Background, Content, ShowcaseContainer, Text36 } from './styles';
 import WorkInfo from './workInfo';
 
-const Work = () => {
+const Work = ({ id }: { id: string }) => {
   return (
-    <Background>
+    <Background id={id}>
       <Content>
         <Icons />
         <AnimateSharedLayout>
