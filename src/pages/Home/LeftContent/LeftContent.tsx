@@ -6,7 +6,7 @@ import {
   IconContainer,
   CircleContainer,
 } from './styles';
-import Button from '../../../components/Button/Button';
+import Button from '../../../components/Button';
 import { AnimationControls } from 'framer-motion';
 import WaveEmoji from '../../../images/SVG/WaveEmoji.svg';
 import Circle from '../../../images/SVG/Circle.svg';

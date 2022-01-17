@@ -2,11 +2,12 @@ import { AnimationControls } from 'framer-motion';
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import {
-  Profile,
+  Content,
   DefaultBorder,
   Background,
   MoonDiv,
   WavesDiv,
+  ImageContainer,
 } from './styles';
 import Moon from '../../../images/SVG/Moon.svg';
 import Waves from '../../../images/SVG/Waves.svg';
@@ -51,24 +52,30 @@ export default function Right({
   iconControls: AnimationControls;
 }) {
   return (
-    <Profile
-      onHoverStart={() => {
-        borderControls.start(BorderVariants.hover);
-      }}
-      onHoverEnd={() => {
-        borderControls.start(BorderVariants.initial);
-      }}
-    >
-      <StaticImage
-        src="../../../images/PNG/photo.png"
-        alt="profile picture"
-        style={{ borderRadius: '25px', width: '300px', height: 'auto' }}
-      />
-      <DefaultBorder
-        initial="initial"
-        variants={BorderVariants}
-        animate={borderControls}
-      />
+    <Content>
+      <ImageContainer
+        onHoverStart={() => {
+          borderControls.start(BorderVariants.hover);
+        }}
+        onHoverEnd={() => {
+          borderControls.start(BorderVariants.initial);
+        }}
+      >
+        <StaticImage
+          src="../../../images/PNG/photo.png"
+          alt="profile picture"
+          style={{
+            borderRadius: '25px',
+            width: '100%',
+            height: 'auto',
+          }}
+        />
+        <DefaultBorder
+          initial="initial"
+          variants={BorderVariants}
+          animate={borderControls}
+        />
+      </ImageContainer>
 
       <Background
         variants={container}
@@ -83,6 +90,6 @@ export default function Right({
           <Waves />
         </WavesDiv>
       </Background>
-    </Profile>
+    </Content>
   );
 }

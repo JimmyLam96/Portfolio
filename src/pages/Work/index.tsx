@@ -1,6 +1,6 @@
 import { AnimateSharedLayout, useAnimation } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import { ShowcaseCard } from '../../components/WorkShowcase/WorkShowcase';
+import { ShowcaseCard } from '../../components/WorkShowcase';
 import Icons from './Icons';
 import { Background, Content, ShowcaseContainer, Text36 } from './styles';
 import WorkInfo from './workInfo';

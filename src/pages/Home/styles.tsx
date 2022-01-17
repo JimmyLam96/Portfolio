@@ -3,16 +3,13 @@ import styled from 'styled-components';
 import { ScreenSizes } from '../../config/ScreenSizes';
 import HomePageBG from '../../images/SVG/HomePageBG.svg';
 
-export const Content = styled.div`
-  width: 100%;
-  height: 100%;
+export const Background = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   font-weight: 600;
   font-size: 1.5em;
   text-align: center;
-  box-sizing: border-box;
   overflow: hidden;
   align-items: center;
 `;
@@ -20,9 +17,10 @@ export const Content = styled.div`
 export const InnerContent = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap-reverse;
-  max-width: 85%;
+  min-height: 70vh;
+
   @media screen and (max-width: ${ScreenSizes.TABLET}) {
     justify-content: space-evenly;
   }
@@ -31,14 +29,19 @@ export const InnerContent = styled.div`
   }
 `;
 
-export const MainContainer = styled.div`
+export const Content = styled.div`
   width: 100%;
-  height: 100%;
-  max-width: 1800px;
+  max-width: 1400px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 5%;
+  padding: 0 4rem;
+  @media screen and (max-width: 826px) {
+    padding: 0 2rem;
+  }
+  @media screen and (max-width: ${ScreenSizes.PHONE_SMALL}) {
+    padding: 0 1rem;
+  }
 `;
 
 export const BG = styled(HomePageBG)`
@@ -67,4 +70,11 @@ export const CircleDiv = styled(motion.div)`
   padding: 10px;
   display: flex;
   align-items: center;
+`;
+
+export const Footer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
 `;

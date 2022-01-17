@@ -2,19 +2,24 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     * {
-        box-sizing: border-box;
         margin: 0;
-        /* overscroll-behavior: none; */
+        padding: 0;
+        -webkit-box-sizing: border-box !important;
+	    -moz-box-sizing: border-box !important;
+	    -ms-box-sizing: border-box !important;
+	    box-sizing: border-box !important;
     }
 
-    html, body, #___gatsby, #gatsby-focus-wrapper{
-        overscroll-behavior: none;
-        height: 100vh;
+    html {
+        font-size: 16px;
+        font-family: "Quicksand";
+    }
+    
+    body, #___gatsby, #gatsby-focus-wrapper {
+        width: 100%;
+        min-height: 100vh;
     }
 
-    .pin-spacer {
-        /* width: 500% !important; */
-    }
 `;
 
 export default GlobalStyle;

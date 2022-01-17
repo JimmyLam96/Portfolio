@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+export const DefaultText48 = styled.h2`
+  font-family: Quicksand;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0em;
+  text-align: left;
+`;
+
 export const DefaultText36 = styled.h1`
   font-family: Quicksand;
   font-size: 36px;
@@ -17,6 +27,16 @@ export const DefaultText24 = styled.h2`
   font-style: normal;
   font-weight: 700;
   line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+`;
+
+export const DefaultText22 = styled.span`
+  font-family: Quicksand;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
   letter-spacing: 0em;
   text-align: left;
 `;

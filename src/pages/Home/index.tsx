@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Left from './LeftContent/LeftContent';
-import Navbar from '../../components/Navbar/Navbar';
-import { BG, Content, MainContainer, InnerContent } from './styles';
+import Navbar from '../../components/Navbar';
+import { BG, Background, Content, InnerContent, Footer } from './styles';
 import Triangle from '../../images/SVG/Triangle.svg';
 import { useAnimation } from 'framer-motion';
 import Right from './RightContent/RightContent';
@@ -24,17 +24,19 @@ const HomePage = ({ id }: { id: string }) => {
   }, []);
 
   return (
-    <Content id={id}>
-      <MainContainer>
+    <Background id={id}>
+      <Content>
         <Navbar />
         <InnerContent>
           <Left handControls={handControls} iconControls={iconControls} />
           <Right borderControls={borderControls} iconControls={iconControls} />
         </InnerContent>
-        <Triangle style={{ display: 'flex', alignSelf: 'center' }} />
-      </MainContainer>
-      <BG />
-    </Content>
+        <Footer>
+          <Triangle />
+        </Footer>
+      </Content>
+      {/* <BG /> */}
+    </Background>
   );
 };
 

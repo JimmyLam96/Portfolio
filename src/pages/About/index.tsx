@@ -32,10 +32,6 @@ import YellowPolka from '../../images/SVG/YellowPolka.svg';
 import { StaticImage } from 'gatsby-plugin-image';
 import { DefaultText18 } from '../../config/DefaulTextSizes';
 import { SpringAnimation } from '../../config/DefaultVariants';
-// if (typeof window !== 'undefined') {
-//   // eslint-disable-next-line global-require
-//   require('smooth-scroll')('a[href*="#"]');
-// }
 
 const ParentVariants = {
   initial: {

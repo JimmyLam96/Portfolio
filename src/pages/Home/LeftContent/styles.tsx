@@ -32,9 +32,7 @@ export const H2 = styled.h2`
 `;
 
 export const Content = styled.div`
-  flex-direction: column;
-  display: grid;
-  grid-column: 1 / 3;
+  flex: 1;
   @media screen and (max-width: ${ScreenSizes.TABLET}) {
     margin-top: 50px;
   }

@@ -9,9 +9,7 @@ export default function Icons() {
   return (
     <div
       style={{
-        position: 'absolute',
         inset: 0,
-        top: -130,
         width: '100%',
         display: 'flex',
         justifyContent: 'space-around',
