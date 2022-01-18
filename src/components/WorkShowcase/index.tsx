@@ -20,24 +20,25 @@ import Exit from '../../images/SVG/Exit.svg';
 
 const RectangleVariants = {
   start: {
-    borderRadius: '13px',
+    // borderRadius: '13px',
     transition: { duration: 0.5 },
   },
   end: {
-    borderRadius: '0 13px 13px 0',
+    // borderRadius: '0 13px 13px 0',
     transition: { duration: 0.5 },
   },
 };
 
 const ImageVariants = {
   start: {
-    borderRadius: '13px',
+    backgroundColor: DefaultColors.Secondary,
+    // borderRadius: '13px',
     borderShadow: 'none',
     transition: { duration: 0.1 },
   },
   end: {
     backgroundColor: DefaultColors.Button,
-    borderRadius: '13px 0 0 13px',
+    // borderRadius: '13px 0 0 13px',
     boxShadow: '0px 7px 50px 2px #0000001a',
     transition: { duration: 0.1 },
   },
@@ -80,15 +81,8 @@ export const ShowcaseCard = ({
           layout
           transition={{ transition: { duration: 0.5 } }}
         >
-          {expand === id && (
-            <Exit
-              onClick={() => {
-                if (expand === id) setExpand(null);
-              }}
-              style={{ position: 'absolute', top: 15, right: 50 }}
-            />
-          )}
           <ImageBackground
+            isSelected={expand === id}
             variants={ImageVariants}
             initial="start"
             animate={controls}
@@ -113,6 +107,14 @@ export const ShowcaseCard = ({
             animate={controls}
             isSelected={expand === id}
           >
+            {expand === id && (
+              <Exit
+                onClick={() => {
+                  if (expand === id) setExpand(null);
+                }}
+                style={{ position: 'absolute', top: 15, right: 15 }}
+              />
+            )}
             <Title>{title}</Title>
             <DefaultText14>{shortText}</DefaultText14>
             {expand === id && <DefaultText14>{longText}</DefaultText14>}

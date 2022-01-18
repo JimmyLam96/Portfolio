@@ -6,16 +6,30 @@ import { DefaultText24 } from '../../config/DefaulTextSizes';
 import { ScreenSizes } from '../../config/ScreenSizes';
 
 export const RoundedRectangle = styled(motion.div)<{ isSelected: boolean }>`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: ${(props) =>
     props.isSelected ? 'space-around' : 'space-evenly'};
   padding: 15px 25px;
-  border-radius: 13px;
+  border-radius: ${(props) => (props.isSelected ? '0 13px 13px 0' : '13px')};
   background-color: ${(props) =>
     props.isSelected ? '#FFFFFF' : DefaultColors.Secondary};
   box-shadow: 0px 7px 50px 2px #0000001a;
   max-width: 60%;
+  width: 100%;
+
+  @media screen and (max-width: ${ScreenSizes.TABLET}) {
+    ${(props) =>
+      props.isSelected
+        ? css`
+            border-radius: ${props.isSelected ? '0 0 13px 13px' : '13px'};
+            max-width: 80%;
+          `
+        : css`
+            max-width: 100%;
+          `}
+  }
 `;
 
 export const Title = styled(DefaultText24)`
@@ -27,13 +41,27 @@ export const SubTitle = styled(DefaultText24)`
   color: ${DefaultColors.Tertairy};
 `;
 
-export const ImageBackground = styled(motion.div)`
+export const ImageBackground = styled(motion.div)<{ isSelected: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   max-width: 30%;
   z-index: 1;
+  border-radius: ${(props) => (props.isSelected ? '13px 0 0 13px' : '13px')};
+
+  @media screen and (max-width: ${ScreenSizes.TABLET}) {
+    ${(props) =>
+      props.isSelected
+        ? css`
+            max-width: 80%;
+            border-radius: ${props.isSelected ? '13px 13px 0 0' : '13px'};
+            overflow: hidden;
+          `
+        : css`
+            display: none;
+          `}
+  }
 `;
 
 export const ImageContainer = styled.div<{ isSelected: boolean }>`
@@ -57,7 +85,6 @@ export const ContentBounds = styled.div`
 `;
 
 export const CardContent = styled(motion.div)<{ isSelected: boolean }>`
-  position: relative;
   width: 100%;
   max-width: 700px;
   gap: 0;
@@ -71,6 +98,15 @@ export const CardContent = styled(motion.div)<{ isSelected: boolean }>`
       justify-content: center;
       cursor: auto;
     `}
+
+  @media screen and (max-width: ${ScreenSizes.TABLET}) {
+    ${(props) =>
+      props.isSelected &&
+      css`
+        flex-direction: column;
+        align-items: center;
+      `}
+  }
 `;
 
 export const Card = styled.div`

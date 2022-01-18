@@ -4,7 +4,13 @@ import { graphql } from 'gatsby';
 import React, { useEffect, useState } from 'react';
 import { ShowcaseCard } from '../../components/WorkShowcase';
 import Icons from './Icons';
-import { Background, Content, ShowcaseContainer, Text36 } from './styles';
+import {
+  Background,
+  Content,
+  ShowcaseContainer,
+  Text36,
+  WorkContent,
+} from './styles';
 import { TypeNode, TypeProjectMarkdown } from './types';
 
 const Work = ({ id }: { id: string }) => {
@@ -31,21 +37,23 @@ const Work = ({ id }: { id: string }) => {
       <Content>
         <Icons />
         <AnimateSharedLayout>
-          <Text36>work</Text36>
-          <ShowcaseContainer>
-            {data.allMarkdownRemark.nodes.map((x: TypeNode) => {
-              const { title, technologies, slug } = x.frontmatter;
-              return (
-                <ShowcaseCard
-                  id={x.id}
-                  title={title}
-                  shortText={''}
-                  longText={''}
-                  technologies={technologies}
-                />
-              );
-            })}
-          </ShowcaseContainer>
+          <WorkContent>
+            <Text36>work</Text36>
+            <ShowcaseContainer>
+              {data.allMarkdownRemark.nodes.map((x: TypeNode) => {
+                const { title, technologies, slug } = x.frontmatter;
+                return (
+                  <ShowcaseCard
+                    id={x.id}
+                    title={title}
+                    shortText={''}
+                    longText={''}
+                    technologies={technologies}
+                  />
+                );
+              })}
+            </ShowcaseContainer>
+          </WorkContent>
         </AnimateSharedLayout>
       </Content>
     </Background>
