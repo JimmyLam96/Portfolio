@@ -8,30 +8,26 @@ import {
   Grid,
   Coding,
   Personal,
-  YellowStairsContainerRight,
   Border,
-  YellowStairsContainerLeft,
   PurplePolkaContainer,
   PurpleCircleContainer,
-  HamburgerMenuContainer,
   MoonContainer,
   YellowPolkaContainer,
   WavesContainer,
-  MainContainer,
+  Content,
   CodingBorder,
   CodingText,
   PersonalText,
 } from './styles';
 import PurpleCircle from '../../images/SVG/PurpleCircle.svg';
-import YellowWaves from '../../images/SVG/YellowWaves.svg';
 import PurplePolka from '../../images/SVG/PurplePolka.svg';
-import HamburgerMenu from '../../images/SVG/HamburgerMenu.svg';
 import DarkBlueWaves from '../../images/SVG/DarkBlueWaves.svg';
 import Moon from '../../images/SVG/Moon.svg';
 import YellowPolka from '../../images/SVG/YellowPolka.svg';
-import { StaticImage } from 'gatsby-plugin-image';
 import { DefaultText18 } from '../../config/DefaulTextSizes';
 import { SpringAnimation } from '../../config/DefaultVariants';
+import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image';
 
 const ParentVariants = {
   initial: {
@@ -94,9 +90,39 @@ export default function About({ id }: { id: string }) {
   const gridControls = useAnimation();
   const borderControls = useAnimation();
 
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      allMarkdownRemark(
+        filter: { frontmatter: { featuredImg: { name: { ne: null } } } }
+      ) {
+        nodes {
+          frontmatter {
+            featuredImg {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+            text
+            title
+          }
+        }
+      }
+    }
+  `);
+
+  const marathonImage = getImage(
+    data.allMarkdownRemark.nodes[0].frontmatter.featuredImg.childImageSharp,
+  );
+  const rockstarImage = getImage(
+    data.allMarkdownRemark.nodes[1].frontmatter.featuredImg.childImageSharp,
+  );
+  const codingMe = getImage(
+    data.allMarkdownRemark.nodes[2].frontmatter.featuredImg.childImageSharp,
+  );
+
   return (
     <Background id={id}>
-      <MainContainer>
+      <Content>
         <Header>
           <Text36>about me</Text36>
         </Header>
@@ -108,38 +134,26 @@ export default function About({ id }: { id: string }) {
           viewport={{ once: true }}
         >
           <Occupation variants={BlockVariants}>
-            <StaticImage
-              src="../../images/PNG/RockstarIcon.png"
-              alt="Rockstar IT Logo"
-              style={{ width: '50%', height: 'auto' }}
-            />
+            {rockstarImage && (
+              <GatsbyImage
+                image={rockstarImage}
+                alt="Rockstar IT Logo"
+                style={{ width: '50%', height: 'auto' }}
+              />
+            )}
+
             <DefaultText18>
-              Currently I am working as a software engineer at{' '}
+              Currently I am working as a software engineer at
               <a href="https://www.teamrockstars.nl/">Team Rockstar IT</a>.
               Where I am the main front end engineer responsible for the
               development of a testimonial website
             </DefaultText18>
-            <YellowStairsContainerLeft variants={IconVariants.slideInFromLeft}>
-              <YellowWaves />
-            </YellowStairsContainerLeft>
             <PurpleCircleContainer variants={IconVariants.slideInFromRight}>
               <PurpleCircle />
             </PurpleCircleContainer>
             <PurplePolkaContainer variants={IconVariants.slideInFromLeft}>
               <PurplePolka />
             </PurplePolkaContainer>
-            <YellowStairsContainerRight
-              variants={{
-                ...IconVariants.slideInFromLeft,
-                initial: {
-                  opacity: 0,
-                  x: 50,
-                  rotate: 270,
-                },
-              }}
-            >
-              <YellowWaves />
-            </YellowStairsContainerRight>
           </Occupation>
           <CodingBorder
             onHoverStart={() => {
@@ -151,19 +165,22 @@ export default function About({ id }: { id: string }) {
             variants={BlockVariants}
           >
             <Coding>
-              <StaticImage
-                src="../../images/PNG/CodingMe.png"
-                alt="Rockstar IT Logo"
-                style={{ width: '100%', height: 'auto', borderRadius: '10px' }}
-              />
+              {codingMe && (
+                <GatsbyImage
+                  image={codingMe}
+                  alt="Rockstar IT Logo"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: '10px',
+                  }}
+                />
+              )}
               <CodingText>
                 Coding up an efficient solution to a complex problem always
                 gives me a kick. I like bringing together beautiful designs with
                 well thought out code for the ultimate user experience.
               </CodingText>
-              <HamburgerMenuContainer variants={IconVariants.slideInFromRight}>
-                <HamburgerMenu />
-              </HamburgerMenuContainer>
               <MoonContainer variants={IconVariants.slideInFromLeft}>
                 <Moon />
               </MoonContainer>
@@ -175,11 +192,13 @@ export default function About({ id }: { id: string }) {
             />
           </CodingBorder>
           <Personal variants={BlockVariants}>
-            <StaticImage
-              src="../../images/PNG/TerschellingMarathon.png"
-              alt="Terschelling marathon picture"
-              style={{ width: '100%', height: 'auto', borderRadius: '10px' }}
-            />
+            {marathonImage && (
+              <GatsbyImage
+                image={marathonImage}
+                alt="Terschelling marathon picture"
+                style={{ width: '100%', height: 'auto', borderRadius: '10px' }}
+              />
+            )}
             <PersonalText>
               My spare time is usually spend in the gym, in my running shoes,
               swimming laps at the pool or coding up some project. I like
@@ -193,7 +212,7 @@ export default function About({ id }: { id: string }) {
             </WavesContainer>
           </Personal>
         </Grid>
-      </MainContainer>
+      </Content>
     </Background>
   );
 }

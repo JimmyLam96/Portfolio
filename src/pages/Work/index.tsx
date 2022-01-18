@@ -17,12 +17,15 @@ const Work = ({ id }: { id: string }) => {
   const data: TypeProjectMarkdown = useStaticQuery(graphql`
     query GetProjectsInfoQuerry {
       allMarkdownRemark(
-        filter: { frontmatter: { title: { ne: "" } } }
+        filter: {
+          frontmatter: { title: { ne: null }, technologies: { ne: null } }
+        }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         nodes {
           frontmatter {
-            slug
+            shortText
+            longText
             technologies
             title
             date
@@ -41,13 +44,14 @@ const Work = ({ id }: { id: string }) => {
             <Text36>work</Text36>
             <ShowcaseContainer>
               {data.allMarkdownRemark.nodes.map((x: TypeNode) => {
-                const { title, technologies, slug } = x.frontmatter;
+                const { title, technologies, shortText, longText } =
+                  x.frontmatter;
                 return (
                   <ShowcaseCard
                     id={x.id}
                     title={title}
-                    shortText={''}
-                    longText={''}
+                    shortText={shortText}
+                    longText={longText}
                     technologies={technologies}
                   />
                 );

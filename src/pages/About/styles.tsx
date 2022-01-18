@@ -2,12 +2,15 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { DefaultColors } from '../../config/DefaultColors';
 import { DefaultText18 } from '../../config/DefaulTextSizes';
+import { ScreenSizes } from '../../config/ScreenSizes';
 import { DefaultBorder } from '../Home/RightContent/styles';
 
 export const Header = styled.div`
   display: flex;
   width: 100%;
   justify-content: flex-end;
+  align-items: center;
+  min-height: 20vh;
 `;
 
 export const Text36 = styled.span`
@@ -26,8 +29,6 @@ export const Background = styled.div`
   background-color: ${DefaultColors.Secondary};
   display: flex;
   justify-content: center;
-  height: 100vh;
-  border: 2px dashed orange;
 `;
 
 export const Occupation = styled(motion.div)`
@@ -36,7 +37,8 @@ export const Occupation = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   background-color: ${DefaultColors.Tertairy};
-  width: 335px;
+  width: 100%;
+  max-width: 335px;
   height: 335px;
   border-radius: 14px;
   padding: 1rem;
@@ -57,80 +59,83 @@ export const Border = styled(DefaultBorder)`
   position: absolute;
   z-index: 0;
   border-radius: 13px;
-  /* top: 0; */
-  /* left: 0; */
+  @media screen and (max-width: ${ScreenSizes.TABLET}) {
+    display: none;
+  }
 `;
 
 export const Grid = styled(motion.div)`
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-template-rows: 500px;
   grid-gap: 30px;
+  min-height: 80vh;
 
   @media screen and (max-width: 777px) {
     grid-template-rows: 1fr;
   }
 `;
 
-export const YellowStairsContainerRight = styled(motion.div)`
-  position: absolute;
-  left: 90%;
-  top: 120%;
-`;
-
-export const YellowStairsContainerLeft = styled(motion.div)`
-  position: absolute;
-  left: 0;
-  top: -30%;
-`;
-
 export const PurplePolkaContainer = styled(motion.div)`
   position: absolute;
   left: -20%;
   top: 85%;
+
+  @media screen and (max-width: ${ScreenSizes.TABLET}) {
+    display: none;
+  }
 `;
 
 export const PurpleCircleContainer = styled(motion.div)`
   position: absolute;
   left: 85%;
   top: -20%;
-`;
 
-export const HamburgerMenuContainer = styled(motion.div)`
-  position: absolute;
-  top: -40%;
-  left: 80%;
+  @media screen and (max-width: ${ScreenSizes.TABLET}) {
+    display: none;
+  }
 `;
 
 export const MoonContainer = styled(motion.div)`
   position: absolute;
-  top: -70%;
+  top: -50%;
   right: 70%;
   width: 89px;
   height: 89px;
+
+  @media screen and (max-width: ${ScreenSizes.TABLET}) {
+    display: none;
+  }
 `;
 
 export const YellowPolkaContainer = styled(motion.div)`
   position: absolute;
   top: -28%;
   left: -17%;
+
+  @media screen and (max-width: ${ScreenSizes.TABLET}) {
+    display: none;
+  }
 `;
 
 export const WavesContainer = styled(motion.div)`
   position: absolute;
   top: 115%;
   left: 90%;
+
+  @media screen and (max-width: ${ScreenSizes.TABLET}) {
+    display: none;
+  }
 `;
 
-export const MainContainer = styled.div`
+export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 7rem;
+  /* gap: 7rem; */
   padding: 5%;
   width: 100%;
   max-width: 1800px;
-  height: 100%;
   justify-content: space-evenly;
 `;
 

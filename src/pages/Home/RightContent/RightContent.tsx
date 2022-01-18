@@ -1,6 +1,6 @@
 import { AnimationControls } from 'framer-motion';
 import React from 'react';
-import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import {
   Content,
   DefaultBorder,

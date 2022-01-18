@@ -14,7 +14,7 @@ const App = () => {
     <ShowcaseProvider>
       <Layout>
         <Home id="home" />
-        {/* <About id="about" /> */}
+        <About id="about" />
         <Work id="work" />
         <Contact id="contact" />
       </Layout>

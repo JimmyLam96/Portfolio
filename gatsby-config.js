@@ -29,8 +29,15 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'markdowns',
-        path: './src/projects/',
+        name: 'about-markdowns',
+        path: './src/md-about/',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'projects-markdowns',
+        path: './src/md-projects/',
       },
     },
   ],

@@ -16,7 +16,7 @@ export const RoundedRectangle = styled(motion.div)<{ isSelected: boolean }>`
   background-color: ${(props) =>
     props.isSelected ? '#FFFFFF' : DefaultColors.Secondary};
   box-shadow: 0px 7px 50px 2px #0000001a;
-  max-width: 60%;
+  max-width: 65%;
   width: 100%;
 
   @media screen and (max-width: ${ScreenSizes.TABLET}) {

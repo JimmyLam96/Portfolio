@@ -6,9 +6,10 @@ export type TypeProjectMarkdown = {
 
 export type TypeNode = {
   frontmatter: {
-    slug: string;
     technologies: string[];
     title: string;
+    shortText: string;
+    longText: string;
   };
   id: string;
 };
