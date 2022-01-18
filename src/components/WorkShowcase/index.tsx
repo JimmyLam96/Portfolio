@@ -53,7 +53,7 @@ export const ShowcaseCard = ({
   title: string;
   shortText: string;
   longText: string;
-  id: TypeExpandStates;
+  id: string;
   technologies: string[];
 }) => {
   const { expand, setExpand } = useShowcase();
@@ -83,7 +83,7 @@ export const ShowcaseCard = ({
           {expand === id && (
             <Exit
               onClick={() => {
-                if (expand === id) setExpand(-1);
+                if (expand === id) setExpand(null);
               }}
               style={{ position: 'absolute', top: 15, right: 50 }}
             />

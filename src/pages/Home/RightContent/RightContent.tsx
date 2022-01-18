@@ -1,6 +1,6 @@
 import { AnimationControls } from 'framer-motion';
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image';
 import {
   Content,
   DefaultBorder,
@@ -12,6 +12,9 @@ import {
 import Moon from '../../../images/SVG/Moon.svg';
 import Waves from '../../../images/SVG/Waves.svg';
 import { SpringAnimation } from '../../../config/DefaultVariants';
+import { graphql, useStaticQuery } from 'gatsby';
+import { TypeFile } from './types';
+import { FileNode } from 'gatsby-plugin-image/dist/src/components/hooks';
 
 const BorderVariants = {
   initial: {
@@ -51,6 +54,23 @@ export default function Right({
   borderControls: AnimationControls;
   iconControls: AnimationControls;
 }) {
+  //get all the files that match PNG/photo.png using gatsby image, sharp and tranformer
+  const data = useStaticQuery(graphql`
+    query GetProfilePicQuerry {
+      file(relativePath: { eq: "PNG/photo.png" }) {
+        childrenImageSharp {
+          gatsbyImageData
+          fluid {
+            src
+            srcSet
+            sizes
+          }
+        }
+      }
+    }
+  `);
+  //we are returning an array of possible images so we take the very first one
+  const profile = getImage(data.file.childrenImageSharp[0]);
   return (
     <Content>
       <ImageContainer
@@ -61,15 +81,17 @@ export default function Right({
           borderControls.start(BorderVariants.initial);
         }}
       >
-        <StaticImage
-          src="../../../images/PNG/photo.png"
-          alt="profile picture"
-          style={{
-            borderRadius: '25px',
-            width: '100%',
-            height: 'auto',
-          }}
-        />
+        {profile && (
+          <GatsbyImage
+            image={profile}
+            alt="profile picture"
+            style={{
+              borderRadius: '25px',
+              width: '100%',
+              height: 'auto',
+            }}
+          />
+        )}
         <DefaultBorder
           initial="initial"
           variants={BorderVariants}

@@ -9,11 +9,11 @@ export function useShowcase() {
 }
 
 export function ShowcaseProvider({ children }: { children?: any }) {
-  const [expand, setExpand] = useState<TypeExpandStates>(-1);
+  const [expand, setExpand] = useState<string | null>(null);
 
   const values = {
     expand: expand,
-    setExpand: (id: TypeExpandStates) => setExpand(id),
+    setExpand: (id: string | null) => setExpand(id),
   };
 
   return (
@@ -24,6 +24,6 @@ export function ShowcaseProvider({ children }: { children?: any }) {
 }
 
 interface value {
-  expand: number;
-  setExpand: (id: TypeExpandStates) => void;
+  expand: string | null;
+  setExpand: (id: string | null) => void;
 }

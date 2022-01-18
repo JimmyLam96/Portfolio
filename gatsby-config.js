@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.yourdomain.tld',
     title: 'My Portfolio',
+    description: 'Web development portfolio of Jimmy Lam',
   },
   plugins: [
     'gatsby-plugin-styled-components',
@@ -9,6 +10,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-smoothscroll',
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
@@ -20,10 +22,16 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'images',
+        name: 'svg-images',
         path: './src/images/',
       },
-      __key: 'images',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'markdowns',
+        path: './src/projects/',
+      },
     },
   ],
 };

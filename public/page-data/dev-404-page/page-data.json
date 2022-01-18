@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---cache-dev-404-page-js",
     "path": "/dev-404-page/",
-    "result": {"data":{"allSiteFunction":{"nodes":[]},"allSitePage":{"nodes":[{"path":"/"},{"path":"/About/"},{"path":"/About/styles/"},{"path":"/Contact/"},{"path":"/Contact/styles/"},{"path":"/Home/"},{"path":"/Home/styles/"},{"path":"/Work/Icons/"},{"path":"/Work/"},{"path":"/Work/styles/"},{"path":"/Work/workInfo/"},{"path":"/Home/LeftContent/LeftContent/"},{"path":"/Home/LeftContent/styles/"},{"path":"/Home/RightContent/RightContent/"},{"path":"/Home/RightContent/styles/"}]}},"pageContext":{}},
+    "result": {"data":{"allSiteFunction":{"nodes":[]},"allSitePage":{"nodes":[{"path":"/"},{"path":"/About/"},{"path":"/About/styles/"},{"path":"/Contact/"},{"path":"/Contact/styles/"},{"path":"/Home/"},{"path":"/Home/styles/"},{"path":"/Work/Icons/"},{"path":"/Work/"},{"path":"/Work/styles/"},{"path":"/Work/types/"},{"path":"/Work/workInfo/"},{"path":"/Home/RightContent/RightContent/"},{"path":"/Home/RightContent/styles/"},{"path":"/Home/LeftContent/LeftContent/"},{"path":"/Home/LeftContent/styles/"},{"path":"/Home/RightContent/types/"}]}},"pageContext":{}},
     "staticQueryHashes": []}
