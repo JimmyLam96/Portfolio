@@ -4,9 +4,9 @@ export const Content = styled.div`
   display: flex;
   border: 3px solid #2d334a;
   align-items: center;
-  justify-content: space-around;
-  max-width: 228px;
-  padding: 14px 0;
+  gap: 15px;
+  width: fit-content;
+  padding: 14px 20px;
   border-radius: 20px;
   cursor: pointer;
   user-select: none;

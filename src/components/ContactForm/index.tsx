@@ -1,12 +1,18 @@
 import React from 'react';
-import { Content } from './styles';
+import { Content, Input } from './styles';
 import { DefaultText22 } from '../../config/DefaulTextSizes';
 
-export default function ContactForm({ type }: { type: string }) {
+export default function ContactForm({
+  type,
+  size,
+}: {
+  type: string;
+  size: 'small' | 'large';
+}) {
   return (
-    <Content>
+    <Content size={size}>
       <DefaultText22>{type}</DefaultText22>
-      <input></input>
+      <Input />
     </Content>
   );
 }

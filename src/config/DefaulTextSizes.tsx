@@ -5,7 +5,6 @@ export const DefaultText48 = styled.h2`
   font-size: 3rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 60px;
   letter-spacing: 0em;
   text-align: left;
 `;

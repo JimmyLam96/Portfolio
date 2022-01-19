@@ -8,10 +8,15 @@ import {
   Content,
   ContactArrowContainer,
   GetInContactContainer,
+  Text36,
+  Text48,
+  NameEmailContainer,
+  LeftContent,
+  RightContent,
 } from './styles';
 import ContactArrow from '../../images/SVG/ContactArrow.svg';
 import { useAnimation } from 'framer-motion';
-import { SpringAnimation } from '../../config/DefaultVariants';
+import Button from '../../components/Button';
 
 const Variants = {
   animate: {
@@ -27,20 +32,27 @@ export default function About({ id }: { id: string }) {
   return (
     <Background id={id}>
       <Content>
-        {/* red color */}
         <Left>
-          <DefaultText36>contact</DefaultText36>
-          <GetInContactContainer animate={controls}>
-            <DefaultText48>let's get in contact</DefaultText48>
-            <ContactArrowContainer variants={Variants}>
-              <ContactArrow />
-            </ContactArrowContainer>
-          </GetInContactContainer>
+          <LeftContent>
+            <Text36>contact</Text36>
+            <GetInContactContainer animate={controls}>
+              <Text48>let's get in contact</Text48>
+              <ContactArrowContainer variants={Variants}>
+                <ContactArrow />
+              </ContactArrowContainer>
+            </GetInContactContainer>
+          </LeftContent>
         </Left>
-        {/* blue color */}
-        {/* <Right>
-          <ContactForm type="name" />
-        </Right> */}
+        <Right>
+          <RightContent>
+            <NameEmailContainer>
+              <ContactForm size="small" type="your name" />
+              <ContactForm size="small" type="email address" />
+            </NameEmailContainer>
+            <ContactForm size="large" type="your message" />
+            <Button>send</Button>
+          </RightContent>
+        </Right>
       </Content>
     </Background>
   );

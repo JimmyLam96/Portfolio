@@ -70,7 +70,7 @@ export default function Left({
         <b>oh hi there!</b> my name is <b>Jimmy Lam</b> <br /> and i’m a
         software engineer
       </H2>
-      <Button />
+      <Button>download resume</Button>
     </Content>
   );
 }

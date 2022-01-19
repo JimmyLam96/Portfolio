@@ -5,10 +5,6 @@ import { DefaultText36 } from '../../config/DefaulTextSizes';
 import { ScreenSizes } from '../../config/ScreenSizes';
 
 export const Background = styled.section`
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  align-items: center;
   font-weight: 600;
   font-size: 1.5em;
   text-align: center;
@@ -18,7 +14,7 @@ export const Background = styled.section`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  align-items: center;
   position: relative;
   width: 100%;
   gap: 30px;
