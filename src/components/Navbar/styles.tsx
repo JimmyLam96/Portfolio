@@ -6,7 +6,7 @@ export const Content = styled.div`
   justify-content: space-between;
   width: 100%;
   min-height: 20vh;
-  z-index: 1;
+  z-index: 2;
 
   @media screen and (max-width: ${ScreenSizes.TABLET}) {
     min-height: 15vh;
@@ -44,8 +44,11 @@ export const LinkList = styled.ul`
 export const IconContainer = styled.div`
   display: grid;
   align-items: center;
-  /* width: 10%; */
-  grid-gap: 20px;
+  grid-gap: 40px;
+
+  @media screen and (max-width: 425px) {
+    grid-gap: 10px;
+  }
 `;
 
 export const HR = styled.hr`

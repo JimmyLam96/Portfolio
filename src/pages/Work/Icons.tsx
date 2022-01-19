@@ -9,11 +9,11 @@ import { IconsContainer } from './styles';
 export default function Icons() {
   return (
     <IconsContainer>
-      <YellowWaves />
+      <YellowWaves style={{ alignSelf: 'center' }} />
       <PurpleCircle />
       <Polka />
       <Waves />
-      <YellowMoon />
+      <YellowMoon style={{ alignSelf: 'center' }} />
     </IconsContainer>
   );
 }

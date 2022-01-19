@@ -31,34 +31,27 @@ export const DefaultBorder = styled(motion.div)`
   z-index: -1;
 `;
 
-export const Background = styled(motion.div)`
+export const IconContainer = styled(motion.div)`
   position: absolute;
-  /* border: 5px solid red; */
+  z-index: 0;
   width: 100%;
   height: 100%;
-  /* display: grid; */
-  /* width: 100%; */
-  /* height: 100%; */
-  /* grid-template-columns: repeat(20, 1fr); */
-  /* grid-template-rows: repeat(20, 1fr); */
-  /* min-width: 0; */
-  /* min-height: 0; */
-  /* z-index: -1; */
+  @media screen and (max-width: ${ScreenSizes.LAPTOP}) {
+    display: none;
+  }
 `;
 
 export const MoonDiv = styled(motion.div)`
   position: absolute;
   top: -30%;
-  left: 80%;
-  width: 80px;
-  height: 80px;
+  left: 90%;
   z-index: -1;
 `;
 
 export const WavesDiv = styled(motion.div)`
   position: absolute;
   top: -50%;
-  left: 0;
+  left: 70%;
   width: 80px;
   height: 80px;
   z-index: -1;

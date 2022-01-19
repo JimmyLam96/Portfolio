@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
-export const Content = styled.div`
+export const Content = styled.a`
   display: flex;
   border: 3px solid #2d334a;
+  color: black;
+  text-decoration: none;
   align-items: center;
   gap: 15px;
   width: fit-content;

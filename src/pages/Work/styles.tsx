@@ -17,7 +17,6 @@ export const Content = styled.div`
   align-items: center;
   position: relative;
   width: 100%;
-  gap: 30px;
   padding: 0 4rem;
   @media screen and (max-width: 826px) {
     padding: 0 2rem;

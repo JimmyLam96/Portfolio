@@ -3,6 +3,7 @@ import Github from '../../images/SVG/Github.svg';
 import Linkedin from '../../images/SVG/Linkedin.svg';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import { Content, LinkList, ListItem, IconContainer } from './styles';
+import { navigate } from 'gatsby';
 
 export default function Navbar() {
   return (
@@ -19,8 +20,16 @@ export default function Navbar() {
         </ListItem>
       </LinkList>
       <IconContainer>
-        <Github style={{ cursor: 'pointer', gridColumn: 1 }} />
-        <Linkedin style={{ cursor: 'pointer', gridColumn: 2 }} />
+        <Github
+          style={{ cursor: 'pointer', gridColumn: 1 }}
+          onClick={() => navigate('https://github.com/JimmyLam96')}
+        />
+        <Linkedin
+          style={{ cursor: 'pointer', gridColumn: 2 }}
+          onClick={() =>
+            navigate('https://www.linkedin.com/in/jimmy-lam-130766b2/')
+          }
+        />
       </IconContainer>
     </Content>
   );

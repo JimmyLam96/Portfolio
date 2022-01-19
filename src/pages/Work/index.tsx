@@ -29,6 +29,7 @@ const Work = ({ id }: { id: string }) => {
             technologies
             title
             date
+            subTitle
           }
           id
         }
@@ -44,7 +45,7 @@ const Work = ({ id }: { id: string }) => {
             <Text36>work</Text36>
             <ShowcaseContainer>
               {data.allMarkdownRemark.nodes.map((x: TypeNode) => {
-                const { title, technologies, shortText, longText } =
+                const { title, technologies, shortText, longText, subTitle } =
                   x.frontmatter;
                 return (
                   <ShowcaseCard
@@ -52,6 +53,7 @@ const Work = ({ id }: { id: string }) => {
                     title={title}
                     shortText={shortText}
                     longText={longText}
+                    subTitle={subTitle}
                     technologies={technologies}
                   />
                 );

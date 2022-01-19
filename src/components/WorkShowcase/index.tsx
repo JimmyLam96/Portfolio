@@ -50,11 +50,13 @@ export const ShowcaseCard = ({
   longText,
   id,
   technologies,
+  subTitle,
 }: {
   title: string;
   shortText: string;
   longText: string;
   id: string;
+  subTitle: string;
   technologies: string[];
 }) => {
   const { expand, setExpand } = useShowcase();
@@ -118,7 +120,7 @@ export const ShowcaseCard = ({
             <Title>{title}</Title>
             <DefaultText14>{shortText}</DefaultText14>
             {expand === id && <DefaultText14>{longText}</DefaultText14>}
-            {expand !== id && <SubTitle>Team Rockstar IT</SubTitle>}
+            {expand !== id && <SubTitle>{subTitle}</SubTitle>}
             {expand === id && <ExpandedFooter technologies={technologies} />}
           </RoundedRectangle>
         </CardContent>

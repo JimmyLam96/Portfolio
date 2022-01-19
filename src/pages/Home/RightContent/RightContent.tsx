@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import {
   Content,
   DefaultBorder,
-  Background,
+  IconContainer,
   MoonDiv,
   WavesDiv,
   ImageContainer,
@@ -99,7 +99,7 @@ export default function Right({
         />
       </ImageContainer>
 
-      <Background
+      <IconContainer
         variants={container}
         initial="hidden"
         animate={iconControls}
@@ -111,7 +111,7 @@ export default function Right({
         <WavesDiv variants={IconVariants}>
           <Waves />
         </WavesDiv>
-      </Background>
+      </IconContainer>
     </Content>
   );
 }

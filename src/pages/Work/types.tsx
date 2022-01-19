@@ -10,6 +10,7 @@ export type TypeNode = {
     title: string;
     shortText: string;
     longText: string;
+    subTitle: string;
   };
   id: string;
 };

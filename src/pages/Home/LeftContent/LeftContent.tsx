@@ -6,7 +6,7 @@ import {
   IconContainer,
   CircleContainer,
 } from './styles';
-import Button from '../../../components/Button';
+import DefaultButton from '../../../components/DefaultButton';
 import { AnimationControls } from 'framer-motion';
 import WaveEmoji from '../../../images/SVG/WaveEmoji.svg';
 import Circle from '../../../images/SVG/Circle.svg';
@@ -70,7 +70,9 @@ export default function Left({
         <b>oh hi there!</b> my name is <b>Jimmy Lam</b> <br /> and i’m a
         software engineer
       </H2>
-      <Button>download resume</Button>
+      <DefaultButton href="Curriculum Vitae 2022.pdf">
+        download resume
+      </DefaultButton>
     </Content>
   );
 }

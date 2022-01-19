@@ -16,7 +16,7 @@ import {
 } from './styles';
 import ContactArrow from '../../images/SVG/ContactArrow.svg';
 import { useAnimation } from 'framer-motion';
-import Button from '../../components/Button';
+import DefaultButton from '../../components/DefaultButton';
 
 const Variants = {
   animate: {
@@ -50,7 +50,7 @@ export default function About({ id }: { id: string }) {
               <ContactForm size="small" type="email address" />
             </NameEmailContainer>
             <ContactForm size="large" type="your message" />
-            <Button>send</Button>
+            <DefaultButton>send</DefaultButton>
           </RightContent>
         </Right>
       </Content>
