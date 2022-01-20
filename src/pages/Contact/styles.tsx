@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import DefaultButton from '../../components/DefaultButton';
 import { DefaultColors } from '../../config/DefaultColors';
 import { DefaultText36, DefaultText48 } from '../../config/DefaulTextSizes';
 import { ScreenSizes } from '../../config/ScreenSizes';
@@ -13,13 +14,21 @@ export const Background = styled.div`
 export const Content = styled.div`
   display: flex;
   width: 100%;
-  height: 100vh;
   background-color: ${DefaultColors.Secondary};
+  flex-direction: row;
+  min-height: 100vh;
+
+  @media screen and (max-width: ${ScreenSizes.PHONE_LARGE}) {
+    flex-direction: column;
+  }
 `;
 
 export const Left = styled.div`
-  height: 100%;
   width: 50%;
+
+  @media screen and (max-width: ${ScreenSizes.PHONE_LARGE}) {
+    width: 100%;
+  }
 `;
 
 export const LeftContent = styled.div`
@@ -40,8 +49,6 @@ export const Right = styled(Left)``;
 
 export const RightContent = styled(LeftContent)`
   padding: 4rem;
-  justify-content: space-evenly;
-  align-items: center;
   @media screen and (max-width: ${ScreenSizes.TABLET}) {
     padding: 1rem;
   }
@@ -78,4 +85,14 @@ export const NameEmailContainer = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 30px;
+`;
+
+export const Form = styled.form`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 `;

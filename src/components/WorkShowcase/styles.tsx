@@ -84,7 +84,7 @@ export const ContentBounds = styled.div`
   gap: 35px;
 `;
 
-export const CardContent = styled(motion.div)<{ isSelected: boolean }>`
+export const CardContent = styled(motion.div)<{ $isSelected: boolean }>`
   width: 100%;
   max-width: 700px;
   gap: 0;
@@ -92,7 +92,7 @@ export const CardContent = styled(motion.div)<{ isSelected: boolean }>`
   justify-content: space-between;
   cursor: pointer;
   ${(props) =>
-    props.isSelected &&
+    props.$isSelected &&
     css`
       height: 375px;
       justify-content: center;
@@ -101,7 +101,7 @@ export const CardContent = styled(motion.div)<{ isSelected: boolean }>`
 
   @media screen and (max-width: ${ScreenSizes.TABLET}) {
     ${(props) =>
-      props.isSelected &&
+      props.$isSelected &&
       css`
         flex-direction: column;
         align-items: center;

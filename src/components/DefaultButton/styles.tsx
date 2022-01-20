@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-export const Content = styled.a`
+export const Content = styled(motion.a)`
   display: flex;
   border: 3px solid #2d334a;
   color: black;
