@@ -1,9 +1,14 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import DefaultButton from '../../components/DefaultButton';
-import { DefaultColors } from '../../config/DefaultColors';
+import { DefaultColors, SVGColors } from '../../config/DefaultColors';
 import { DefaultText36, DefaultText48 } from '../../config/DefaulTextSizes';
 import { ScreenSizes } from '../../config/ScreenSizes';
+import SignalIcon from '../../images/SVG/Signal.svg';
+import MoonIcon from '../../images/SVG/Moon.svg';
+import YellowWavesIcon from '../../images/SVG/YellowWaves.svg';
+import CircleIcon from '../../images/SVG/PurpleCircle.svg';
+import WavesIcon from '../../images/SVG/Waves.svg';
+import PolkaIcon from '../../images/SVG/Polka.svg';
 
 export const Background = styled.div`
   display: flex;
@@ -48,6 +53,7 @@ export const LeftContent = styled.div`
 export const Right = styled(Left)``;
 
 export const RightContent = styled(LeftContent)`
+  position: relative;
   padding: 4rem;
   @media screen and (max-width: ${ScreenSizes.TABLET}) {
     padding: 1rem;
@@ -95,4 +101,62 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
   gap: 50px;
+`;
+
+export const Signal = styled(SignalIcon)`
+  position: absolute;
+  top: -35px;
+  left: 125px;
+  @media screen and (max-width: ${ScreenSizes.TABLET}) {
+    left: 90px;
+  }
+  @media screen and (max-width: ${ScreenSizes.PHONE_LARGE}) {
+    display: none;
+  }
+`;
+
+export const ContactContainer = styled.div`
+  position: relative;
+`;
+
+export const Moon = styled(MoonIcon)`
+  position: absolute;
+  filter: ${SVGColors.Paragraph};
+  top: 5%;
+  right: 30%;
+`;
+
+export const YellowWaves = styled(YellowWavesIcon)`
+  position: absolute;
+  left: 25%;
+  top: 15%;
+`;
+
+export const Circle = styled(CircleIcon)`
+  position: absolute;
+  filter: ${SVGColors.Tertairy};
+  left: 50%;
+  top: 25%;
+`;
+
+export const Waves = styled(WavesIcon)`
+  position: absolute;
+  left: 20%;
+  bottom: 15%;
+  filter: ${SVGColors.Tertairy};
+`;
+
+export const Polka = styled(PolkaIcon)`
+  position: absolute;
+  transform: scale(0.6);
+  right: 30%;
+  bottom: 5%;
+  filter: ${SVGColors.Paragraph};
+`;
+
+export const YellowWavesTwo = styled(YellowWavesIcon)`
+  position: absolute;
+  transform: rotate(270deg);
+  right: 20%;
+  bottom: 25%;
 `;

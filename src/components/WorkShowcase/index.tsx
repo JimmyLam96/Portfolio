@@ -1,11 +1,10 @@
-import { AnimatePresence, useAnimation } from 'framer-motion';
+import { useAnimation } from 'framer-motion';
 import { StaticImage } from 'gatsby-plugin-image';
 import React, { useEffect } from 'react';
 import { DefaultColors } from '../../config/DefaultColors';
 import { DefaultText14 } from '../../config/DefaulTextSizes';
 import { useShowcase } from '../../providers/ShowcaseProvider/ShowcaseProvider';
-import { TypeExpandStates } from '../../providers/ShowcaseProvider/types';
-import ExpandedFooter from './ExpandedFooter';
+import ExpandedFooter from './expandedfooter';
 import {
   RoundedRectangle,
   SubTitle,
@@ -79,7 +78,7 @@ export const ShowcaseCard = ({
         isSelected={expand === id}
       >
         <CardContent
-          isSelected={expand === id}
+          $isSelected={expand === id}
           layout
           transition={{ transition: { duration: 0.5 } }}
         >

@@ -13,11 +13,14 @@ import {
   LeftContent,
   RightContent,
   Form,
+  Signal,
+  ContactContainer,
 } from './styles';
 import ContactArrow from '../../images/SVG/ContactArrow.svg';
 import { useAnimation } from 'framer-motion';
 import DefaultButton from '../../components/DefaultButton';
 import emailjs from 'emailjs-com';
+import Icons from './icons';
 
 export default function About({ id }: { id: string }) {
   const controls = useAnimation();
@@ -45,7 +48,10 @@ export default function About({ id }: { id: string }) {
       <Content>
         <Left>
           <LeftContent>
-            <Text36>contact</Text36>
+            <ContactContainer>
+              <Text36>contact</Text36>
+              <Signal />
+            </ContactContainer>
             <GetInContactContainer>
               <Text48>let's get in contact</Text48>
               <ContactArrowContainer>
@@ -56,6 +62,7 @@ export default function About({ id }: { id: string }) {
         </Left>
         <Right>
           <RightContent>
+            <Icons />
             <Form ref={form} onSubmit={sendEmail}>
               <NameEmailContainer>
                 <ContactForm size="small" type="your name" name="name" />

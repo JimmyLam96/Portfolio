@@ -94,6 +94,7 @@ export default function About({ id }: { id: string }) {
     query MyQuery {
       allMarkdownRemark(
         filter: { frontmatter: { featuredImg: { name: { ne: null } } } }
+        sort: { fields: frontmatter___title, order: ASC }
       ) {
         nodes {
           frontmatter {
@@ -111,13 +112,13 @@ export default function About({ id }: { id: string }) {
   `);
 
   const marathonImage = getImage(
-    data.allMarkdownRemark.nodes[0].frontmatter.featuredImg.childImageSharp,
+    data.allMarkdownRemark.nodes[2].frontmatter.featuredImg.childImageSharp,
   );
   const rockstarImage = getImage(
     data.allMarkdownRemark.nodes[1].frontmatter.featuredImg.childImageSharp,
   );
   const codingMe = getImage(
-    data.allMarkdownRemark.nodes[2].frontmatter.featuredImg.childImageSharp,
+    data.allMarkdownRemark.nodes[0].frontmatter.featuredImg.childImageSharp,
   );
 
   return (
@@ -143,10 +144,11 @@ export default function About({ id }: { id: string }) {
             )}
 
             <DefaultText18>
-              Currently I am working as a software engineer at
-              <a href="https://www.teamrockstars.nl/">Team Rockstar IT</a>.
+              {`Currently I am working as a software engineer at `}
+              <a href="https://www.teamrockstars.nl/">Team Rockstar IT</a>
+              {`.
               Where I am the main front end engineer responsible for the
-              development of a testimonial website
+              development of a testimonial website`}
             </DefaultText18>
             <PurpleCircleContainer variants={IconVariants.slideInFromRight}>
               <PurpleCircle />
