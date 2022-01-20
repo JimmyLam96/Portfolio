@@ -3,7 +3,7 @@ import { useStaticQuery } from 'gatsby';
 import { graphql } from 'gatsby';
 import React, { useEffect, useState } from 'react';
 import { ShowcaseCard } from '../../components/WorkShowcase';
-import Icons from './Icons';
+import Icons from './icons';
 import {
   Background,
   Content,

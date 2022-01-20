@@ -5,8 +5,8 @@ import { DefaultText36, DefaultText48 } from '../../config/DefaulTextSizes';
 import { ScreenSizes } from '../../config/ScreenSizes';
 import SignalIcon from '../../images/SVG/Signal.svg';
 import MoonIcon from '../../images/SVG/Moon.svg';
-import YellowWavesIcon from '../../images/SVG/YellowWaves.svg';
-import CircleIcon from '../../images/SVG/PurpleCircle.svg';
+import StairsIcon from '../../images/SVG/Stairs.svg';
+import DotsIcon from '../../images/SVG/Dots.svg';
 import WavesIcon from '../../images/SVG/Waves.svg';
 import PolkaIcon from '../../images/SVG/Polka.svg';
 
@@ -126,13 +126,13 @@ export const Moon = styled(MoonIcon)`
   right: 30%;
 `;
 
-export const YellowWaves = styled(YellowWavesIcon)`
+export const Stairs = styled(StairsIcon)`
   position: absolute;
   left: 25%;
   top: 15%;
 `;
 
-export const Circle = styled(CircleIcon)`
+export const Dots = styled(DotsIcon)`
   position: absolute;
   filter: ${SVGColors.Tertairy};
   left: 50%;
@@ -154,7 +154,7 @@ export const Polka = styled(PolkaIcon)`
   filter: ${SVGColors.Paragraph};
 `;
 
-export const YellowWavesTwo = styled(YellowWavesIcon)`
+export const StairsTwo = styled(StairsIcon)`
   position: absolute;
   transform: rotate(270deg);
   right: 20%;

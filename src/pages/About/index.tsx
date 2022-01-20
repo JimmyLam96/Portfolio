@@ -19,8 +19,8 @@ import {
   CodingText,
   PersonalText,
 } from './styles';
-import PurpleCircle from '../../images/SVG/PurpleCircle.svg';
-import PurplePolka from '../../images/SVG/PurplePolka.svg';
+// import PurpleCircle from '../../images/SVG/PurpleCircle.svg';
+// import PurplePolka from '../../images/SVG/PurplePolka.svg';
 import DarkBlueWaves from '../../images/SVG/DarkBlueWaves.svg';
 import Moon from '../../images/SVG/Moon.svg';
 import YellowPolka from '../../images/SVG/YellowPolka.svg';
@@ -150,12 +150,12 @@ export default function About({ id }: { id: string }) {
               Where I am the main front end engineer responsible for the
               development of a testimonial website`}
             </DefaultText18>
-            <PurpleCircleContainer variants={IconVariants.slideInFromRight}>
+            {/* <PurpleCircleContainer variants={IconVariants.slideInFromRight}>
               <PurpleCircle />
             </PurpleCircleContainer>
             <PurplePolkaContainer variants={IconVariants.slideInFromLeft}>
               <PurplePolka />
-            </PurplePolkaContainer>
+            </PurplePolkaContainer> */}
           </Occupation>
           <CodingBorder
             onHoverStart={() => {
@@ -183,9 +183,9 @@ export default function About({ id }: { id: string }) {
                 gives me a kick. I like bringing together beautiful designs with
                 well thought out code for the ultimate user experience.
               </CodingText>
-              <MoonContainer variants={IconVariants.slideInFromLeft}>
+              {/* <MoonContainer variants={IconVariants.slideInFromLeft}>
                 <Moon />
-              </MoonContainer>
+              </MoonContainer> */}
             </Coding>
             <Border
               initial="initial"
@@ -206,12 +206,12 @@ export default function About({ id }: { id: string }) {
               swimming laps at the pool or coding up some project. I like
               hanging out with friends and family just as much.
             </PersonalText>
-            <YellowPolkaContainer variants={IconVariants.slideInFromLeft}>
+            {/* <YellowPolkaContainer variants={IconVariants.slideInFromLeft}>
               <YellowPolka />
             </YellowPolkaContainer>
             <WavesContainer variants={IconVariants.slideInFromRight}>
               <DarkBlueWaves />
-            </WavesContainer>
+            </WavesContainer> */}
           </Personal>
         </Grid>
       </Content>

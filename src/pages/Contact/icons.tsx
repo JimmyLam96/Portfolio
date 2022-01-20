@@ -1,22 +1,15 @@
 import React from 'react';
-import {
-  Circle,
-  Moon,
-  YellowWaves,
-  Waves,
-  Polka,
-  YellowWavesTwo,
-} from './styles';
+import { Dots, Moon, Stairs, Waves, Polka, StairsTwo } from './styles';
 
 export default function Icons() {
   return (
     <div>
       <Moon />
-      <YellowWaves />
-      <Circle />
+      <Stairs />
+      <Dots />
       <Waves />
       <Polka />
-      <YellowWavesTwo />
+      <StairsTwo />
     </div>
   );
 }
