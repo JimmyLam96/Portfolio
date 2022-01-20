@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const DefaultText48 = styled.h2`
-  font-family: Quicksand;
   font-size: 3rem;
   font-style: normal;
   font-weight: 400;
@@ -10,7 +9,6 @@ export const DefaultText48 = styled.h2`
 `;
 
 export const DefaultText36 = styled.h1`
-  font-family: Quicksand;
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
@@ -21,7 +19,6 @@ export const DefaultText36 = styled.h1`
 `;
 
 export const DefaultText24 = styled.h2`
-  font-family: Quicksand;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -31,7 +28,6 @@ export const DefaultText24 = styled.h2`
 `;
 
 export const DefaultText22 = styled.span`
-  font-family: Quicksand;
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
@@ -41,7 +37,6 @@ export const DefaultText22 = styled.span`
 `;
 
 export const DefaultText18 = styled.p`
-  font-family: Quicksand;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -51,7 +46,6 @@ export const DefaultText18 = styled.p`
 `;
 
 export const DefaultText14 = styled.p`
-  font-family: Quicksand;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;

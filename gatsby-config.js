@@ -12,6 +12,13 @@ module.exports = {
     'gatsby-plugin-smoothscroll',
     'gatsby-transformer-remark',
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Quicksand\:300,400,700`],
+        display: 'swap',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {

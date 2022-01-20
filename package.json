@@ -16,8 +16,9 @@
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.2",
-    "framer-motion": "^5.6.0",
-    "gatsby": "^4.5.3",
+    "framer-motion": "^6.0.0",
+    "gatsby": "^4.5.4",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^2.5.2",
     "gatsby-plugin-react-svg": "^3.1.0",
     "gatsby-plugin-sharp": "^4.5.2",
@@ -30,7 +31,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-gsap": "^3.2.1",
-    "react-parallax-tilt": "^1.5.87",
+    "react-parallax-tilt": "^1.5.88",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
