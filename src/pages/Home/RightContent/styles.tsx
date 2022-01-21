@@ -10,9 +10,6 @@ export const Content = styled.div`
   justify-content: flex-end;
   width: 70%;
   z-index: 1;
-  @media screen and (max-width: 826px) {
-    justify-content: center;
-  }
 `;
 
 export const ImageContainer = styled(motion.div)`

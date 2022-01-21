@@ -27,6 +27,7 @@ export const RoundedRectangle = styled(motion.div)<{ isSelected: boolean }>`
             max-width: 80%;
           `
         : css`
+            gap: 15px;
             max-width: 100%;
           `}
   }

@@ -24,10 +24,10 @@ export const Content = styled.div`
   width: 100%;
   padding: 0 4rem;
   @media screen and (max-width: 826px) {
-    padding: 0 2rem;
+    padding: 2rem;
   }
   @media screen and (max-width: ${ScreenSizes.PHONE_SMALL}) {
-    padding: 0 1rem;
+    padding: 1rem;
   }
 `;
 
@@ -37,21 +37,24 @@ export const ShowcaseContainer = styled(motion.div)`
   flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
-  margin: 30px 0;
 `;
 
-export const Text36 = styled(DefaultText36)`
-  align-self: flex-start;
+export const Header = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  min-height: 5vh;
+  @media screen and (max-width: ${ScreenSizes.LAPTOP}) {
+    min-height: 20vh;
+  }
 `;
 
 export const IconsContainer = styled.div`
-  inset: 0;
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
-  align-self: center;
   min-height: 20vh;
+
+  @media screen and (max-width: ${ScreenSizes.LAPTOP}) {
+    display: none;
+  }
 `;
 
 export const WorkContent = styled.div`

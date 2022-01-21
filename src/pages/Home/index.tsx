@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import Left from './LeftContent/LeftContent';
+import Left from './LeftContent';
 import Navbar from '../../components/Navbar';
 import { BG, Background, Content, InnerContent, Footer } from './styles';
 import Triangle from '../../images/SVG/Triangle.svg';
 import { useAnimation } from 'framer-motion';
-import Right from './RightContent/RightContent';
+import Right from './RightContent';
 
 const HomePage = ({ id }: { id: string }) => {
   const handControls = useAnimation();

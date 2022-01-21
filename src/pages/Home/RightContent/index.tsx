@@ -11,41 +11,12 @@ import {
 } from './styles';
 import Moon from '../../../images/SVG/Moon.svg';
 import Waves from '../../../images/SVG/Waves.svg';
-import { SpringAnimation } from '../../../config/DefaultVariants';
 import { graphql, useStaticQuery } from 'gatsby';
-import { TypeFile } from './types';
-import { FileNode } from 'gatsby-plugin-image/dist/src/components/hooks';
-
-const BorderVariants = {
-  initial: {
-    x: 20,
-    y: 20,
-  },
-  hover: {
-    x: 30,
-    y: 30,
-  },
-};
-
-const container = {
-  hidden: {
-    opacity: 0,
-  },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.35,
-    },
-  },
-};
-
-const IconVariants = {
-  hidden: { opacity: 0, y: 500 },
-  show: {
-    y: 0,
-    ...SpringAnimation,
-  },
-};
+import {
+  BorderVariants,
+  IconContainerVariants,
+  IconVariants,
+} from './animations';
 
 export default function Right({
   borderControls,
@@ -100,7 +71,7 @@ export default function Right({
       </ImageContainer>
 
       <IconContainer
-        variants={container}
+        variants={IconContainerVariants}
         initial="hidden"
         animate={iconControls}
         exit="exit"

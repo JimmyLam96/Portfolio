@@ -160,3 +160,9 @@ export const StairsTwo = styled(StairsIcon)`
   right: 20%;
   bottom: 25%;
 `;
+
+export const IconContainer = styled.div`
+  @media screen and (max-width: ${ScreenSizes.TABLET}) {
+    display: none;
+  }
+`;

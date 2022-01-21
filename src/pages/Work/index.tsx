@@ -3,13 +3,14 @@ import { useStaticQuery } from 'gatsby';
 import { graphql } from 'gatsby';
 import React, { useEffect, useState } from 'react';
 import { ShowcaseCard } from '../../components/WorkShowcase';
+import { DefaultText36 } from '../../config/DefaulTextSizes';
 import Icons from './icons';
 import {
   Background,
   Content,
   ShowcaseContainer,
-  Text36,
   WorkContent,
+  Header,
 } from './styles';
 import { TypeNode, TypeProjectMarkdown } from './types';
 
@@ -41,8 +42,10 @@ const Work = ({ id }: { id: string }) => {
       <Content>
         <Icons />
         <AnimateSharedLayout>
+          <Header>
+            <DefaultText36>work</DefaultText36>
+          </Header>
           <WorkContent>
-            <Text36>work</Text36>
             <ShowcaseContainer>
               {data.allMarkdownRemark.nodes.map((x: TypeNode) => {
                 const { title, technologies, shortText, longText, subTitle } =

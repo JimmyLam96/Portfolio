@@ -10,34 +10,7 @@ import DefaultButton from '../../../components/DefaultButton';
 import { AnimationControls } from 'framer-motion';
 import WaveEmoji from '../../../images/SVG/WaveEmoji.svg';
 import Circle from '../../../images/SVG/Circle.svg';
-
-const emojiVariants = {
-  initial: { opacity: 0 },
-  hover: {
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-    },
-    rotate: [0, 15, -15, 15, -15, 0],
-  },
-};
-
-const circleVariants = {
-  hidden: { opacity: 0, y: 500 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.8,
-      duration: 1.2,
-      type: 'spring',
-      ease: [0.6, 0.01, -0.05, 0.95],
-    },
-  },
-  scroll: {
-    y: 100,
-  },
-};
+import { EmojiVariants, CircleVariants } from './animations';
 
 export default function Left({
   handControls,
@@ -51,7 +24,7 @@ export default function Left({
       <IconContainer>
         <EmojiContainer
           whileHover="hover"
-          variants={emojiVariants}
+          variants={EmojiVariants}
           animate={handControls}
         >
           <WaveEmoji />
@@ -59,7 +32,7 @@ export default function Left({
         <CircleContainer
           initial="hidden"
           onScroll={() => iconControls.start('scroll')}
-          variants={circleVariants}
+          variants={CircleVariants}
           animate={iconControls}
           exit="exit"
         >
