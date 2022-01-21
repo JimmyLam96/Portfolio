@@ -9,8 +9,10 @@ import {
   Coding,
   Personal,
   Border,
-  PurplePolkaContainer,
-  PurpleCircleContainer,
+  DotsContainer,
+  WorkPolkaContainer,
+  Dots,
+  WorkPolka,
   MoonContainer,
   YellowPolkaContainer,
   WavesContainer,
@@ -18,73 +20,19 @@ import {
   CodingBorder,
   CodingText,
   PersonalText,
+  YellowPolka,
+  Waves,
+  Moon,
 } from './styles';
-// import PurpleCircle from '../../images/SVG/PurpleCircle.svg';
-// import PurplePolka from '../../images/SVG/PurplePolka.svg';
-import DarkBlueWaves from '../../images/SVG/DarkBlueWaves.svg';
-import Moon from '../../images/SVG/Moon.svg';
-import YellowPolka from '../../images/SVG/YellowPolka.svg';
 import { DefaultText18 } from '../../config/DefaulTextSizes';
-import { SpringAnimation } from '../../config/DefaultVariants';
 import { graphql, useStaticQuery } from 'gatsby';
-import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image';
-
-const ParentVariants = {
-  initial: {
-    opacity: 0,
-  },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.35,
-    },
-  },
-};
-
-const BlockVariants = {
-  initial: {
-    opacity: 0,
-    y: 50,
-  },
-  show: {
-    y: 0,
-    ...SpringAnimation,
-  },
-};
-
-const BorderVariants = {
-  initial: {
-    x: -20,
-    y: -20,
-  },
-  hover: {
-    x: -30,
-    y: -30,
-  },
-};
-
-const IconVariants = {
-  slideInFromRight: {
-    initial: {
-      opacity: 0,
-      x: 50,
-    },
-    show: {
-      x: 0,
-      ...SpringAnimation,
-    },
-  },
-  slideInFromLeft: {
-    initial: {
-      opacity: 0,
-      x: -50,
-    },
-    show: {
-      x: 0,
-      ...SpringAnimation,
-    },
-  },
-};
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import {
+  BlockVariants,
+  BorderVariants,
+  IconVariants,
+  ParentVariants,
+} from './animations';
 
 export default function About({ id }: { id: string }) {
   const gridControls = useAnimation();
@@ -150,12 +98,12 @@ export default function About({ id }: { id: string }) {
               Where I am the main front end engineer responsible for the
               development of a testimonial website`}
             </DefaultText18>
-            {/* <PurpleCircleContainer variants={IconVariants.slideInFromRight}>
-              <PurpleCircle />
-            </PurpleCircleContainer>
-            <PurplePolkaContainer variants={IconVariants.slideInFromLeft}>
-              <PurplePolka />
-            </PurplePolkaContainer> */}
+            <DotsContainer variants={IconVariants.slideInFromRight}>
+              <Dots />
+            </DotsContainer>
+            <WorkPolkaContainer variants={IconVariants.slideInFromLeft}>
+              <WorkPolka />
+            </WorkPolkaContainer>
           </Occupation>
           <CodingBorder
             onHoverStart={() => {
@@ -183,9 +131,9 @@ export default function About({ id }: { id: string }) {
                 gives me a kick. I like bringing together beautiful designs with
                 well thought out code for the ultimate user experience.
               </CodingText>
-              {/* <MoonContainer variants={IconVariants.slideInFromLeft}>
+              <MoonContainer variants={IconVariants.slideInFromLeft}>
                 <Moon />
-              </MoonContainer> */}
+              </MoonContainer>
             </Coding>
             <Border
               initial="initial"
@@ -206,12 +154,12 @@ export default function About({ id }: { id: string }) {
               swimming laps at the pool or coding up some project. I like
               hanging out with friends and family just as much.
             </PersonalText>
-            {/* <YellowPolkaContainer variants={IconVariants.slideInFromLeft}>
+            <YellowPolkaContainer variants={IconVariants.slideInFromLeft}>
               <YellowPolka />
             </YellowPolkaContainer>
             <WavesContainer variants={IconVariants.slideInFromRight}>
-              <DarkBlueWaves />
-            </WavesContainer> */}
+              <Waves />
+            </WavesContainer>
           </Personal>
         </Grid>
       </Content>

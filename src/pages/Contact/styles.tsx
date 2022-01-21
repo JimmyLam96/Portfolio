@@ -162,7 +162,7 @@ export const StairsTwo = styled(StairsIcon)`
 `;
 
 export const IconContainer = styled.div`
-  @media screen and (max-width: ${ScreenSizes.TABLET}) {
+  @media screen and (max-width: ${ScreenSizes.LAPTOP}) {
     display: none;
   }
 `;

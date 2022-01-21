@@ -23,11 +23,8 @@ export const Content = styled.div`
   position: relative;
   width: 100%;
   padding: 0 4rem;
-  @media screen and (max-width: 826px) {
+  @media screen and (max-width: ${ScreenSizes.LAPTOP}) {
     padding: 2rem;
-  }
-  @media screen and (max-width: ${ScreenSizes.PHONE_SMALL}) {
-    padding: 1rem;
   }
 `;
 
@@ -50,6 +47,7 @@ export const Header = styled.div`
 `;
 
 export const IconsContainer = styled.div`
+  width: 100%;
   min-height: 20vh;
 
   @media screen and (max-width: ${ScreenSizes.LAPTOP}) {

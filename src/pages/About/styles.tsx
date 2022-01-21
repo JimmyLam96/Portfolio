@@ -1,9 +1,14 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { DefaultColors } from '../../config/DefaultColors';
+import { DefaultColors, SVGColors } from '../../config/DefaultColors';
 import { DefaultText18 } from '../../config/DefaulTextSizes';
 import { ScreenSizes } from '../../config/ScreenSizes';
 import { DefaultBorder } from '../Home/RightContent/styles';
+import PersonalPolka from '../../images/SVG/PersonalPolka.svg';
+import WavesIcon from '../../images/SVG/Waves.svg';
+import MoonIcon from '../../images/SVG/Moon.svg';
+import DotsIcon from '../../images/SVG/Dots.svg';
+import WorkPolkaIcon from '../../images/SVG/WorkPolka.svg';
 
 export const Header = styled.div`
   display: flex;
@@ -43,6 +48,7 @@ export const Occupation = styled(motion.div)`
   border-radius: 14px;
   padding: 1rem;
   gap: 10px;
+  z-index: 1;
 `;
 
 export const Personal = styled(Occupation)`
@@ -77,56 +83,53 @@ export const Grid = styled(motion.div)`
   }
 `;
 
-export const PurplePolkaContainer = styled(motion.div)`
+const IconContainer = styled(motion.div)`
   position: absolute;
-  left: -20%;
-  top: 85%;
 
-  @media screen and (max-width: ${ScreenSizes.TABLET}) {
+  @media screen and (max-width: ${ScreenSizes.LAPTOP}) {
     display: none;
   }
 `;
 
-export const PurpleCircleContainer = styled(motion.div)`
-  position: absolute;
+export const DotsContainer = styled(IconContainer)`
   left: 85%;
   top: -20%;
-
-  @media screen and (max-width: ${ScreenSizes.TABLET}) {
-    display: none;
-  }
 `;
 
-export const MoonContainer = styled(motion.div)`
-  position: absolute;
+export const Dots = styled(DotsIcon)`
+  filter: ${SVGColors.Button};
+`;
+
+export const WorkPolkaContainer = styled(IconContainer)`
+  left: -17%;
+  top: 66%;
+`;
+
+export const WorkPolka = styled(WorkPolkaIcon)``;
+
+export const MoonContainer = styled(IconContainer)`
   top: -50%;
   right: 70%;
-  width: 89px;
-  height: 89px;
-
-  @media screen and (max-width: ${ScreenSizes.TABLET}) {
-    display: none;
-  }
 `;
 
-export const YellowPolkaContainer = styled(motion.div)`
-  position: absolute;
-  top: -28%;
+export const Moon = styled(MoonIcon)``;
+
+export const YellowPolkaContainer = styled(IconContainer)`
+  top: -24%;
   left: -17%;
-
-  @media screen and (max-width: ${ScreenSizes.TABLET}) {
-    display: none;
-  }
 `;
 
-export const WavesContainer = styled(motion.div)`
-  position: absolute;
+export const YellowPolka = styled(PersonalPolka)`
+  transform: scale(0.8);
+`;
+
+export const WavesContainer = styled(IconContainer)`
   top: 115%;
   left: 90%;
+`;
 
-  @media screen and (max-width: ${ScreenSizes.TABLET}) {
-    display: none;
-  }
+export const Waves = styled(WavesIcon)`
+  filter: ${SVGColors.Tertairy};
 `;
 
 export const Content = styled.div`
