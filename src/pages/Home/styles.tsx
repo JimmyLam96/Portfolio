@@ -5,6 +5,7 @@ import HomePageBG from '../../images/SVG/HomePageBG.svg';
 
 export const Background = styled.div`
   display: flex;
+  position: relative;
   justify-content: space-between;
   flex-direction: column;
   font-weight: 600;
@@ -33,6 +34,7 @@ export const Content = styled.div`
   width: 100%;
   max-width: 1400px;
   display: flex;
+  z-index: 1;
   justify-content: space-between;
   flex-direction: column;
   padding: 0 4rem;

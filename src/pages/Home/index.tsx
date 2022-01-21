@@ -5,6 +5,8 @@ import { BG, Background, Content, InnerContent, Footer } from './styles';
 import Triangle from '../../images/SVG/Triangle.svg';
 import { useAnimation } from 'framer-motion';
 import Right from './RightContent';
+import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const HomePage = ({ id }: { id: string }) => {
   const handControls = useAnimation();
@@ -23,6 +25,23 @@ const HomePage = ({ id }: { id: string }) => {
     runSyncAnimations();
   }, []);
 
+  const data = useStaticQuery(graphql`
+    query GetBackgroundPicQuerry {
+      file(relativePath: { eq: "PNG/HomeBG.png" }) {
+        childrenImageSharp {
+          gatsbyImageData
+          fluid {
+            src
+            srcSet
+            sizes
+          }
+        }
+      }
+    }
+  `);
+  //we are returning an array of possible images so we take the very first one
+  const bg = getImage(data.file.childrenImageSharp[0]);
+
   return (
     <Background id={id}>
       <Content>
@@ -35,7 +54,17 @@ const HomePage = ({ id }: { id: string }) => {
           <Triangle />
         </Footer>
       </Content>
-      {/* <BG /> */}
+      {bg && (
+        <GatsbyImage
+          image={bg}
+          alt="Waves background"
+          style={{
+            height: '50%',
+            position: 'absolute',
+            bottom: 0,
+          }}
+        />
+      )}
     </Background>
   );
 };
