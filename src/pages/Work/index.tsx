@@ -73,6 +73,7 @@ const Work = ({ id }: { id: string }) => {
                   const image = getImage(
                     imageSrc.childImageSharp.gatsbyImageData,
                   );
+                  if (!image) return;
                   return (
                     <ShowcaseCard
                       key={index}
