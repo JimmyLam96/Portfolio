@@ -1,5 +1,9 @@
 import { useAnimation } from 'framer-motion';
-import { StaticImage } from 'gatsby-plugin-image';
+import {
+  StaticImage,
+  GatsbyImage,
+  IGatsbyImageData,
+} from 'gatsby-plugin-image';
 import React, { useEffect } from 'react';
 import { DefaultColors } from '../../config/DefaultColors';
 import { DefaultText14 } from '../../config/DefaulTextSizes';
@@ -19,11 +23,9 @@ import Exit from '../../images/SVG/Exit.svg';
 
 const RectangleVariants = {
   start: {
-    // borderRadius: '13px',
     transition: { duration: 0.5 },
   },
   end: {
-    // borderRadius: '0 13px 13px 0',
     transition: { duration: 0.5 },
   },
 };
@@ -31,13 +33,11 @@ const RectangleVariants = {
 const ImageVariants = {
   start: {
     backgroundColor: DefaultColors.Secondary,
-    // borderRadius: '13px',
     borderShadow: 'none',
     transition: { duration: 0.1 },
   },
   end: {
     backgroundColor: DefaultColors.Button,
-    // borderRadius: '13px 0 0 13px',
     boxShadow: '0px 7px 50px 2px #0000001a',
     transition: { duration: 0.1 },
   },
@@ -50,6 +50,7 @@ export const ShowcaseCard = ({
   id,
   technologies,
   subTitle,
+  imageSrc,
 }: {
   title: string;
   shortText: string;
@@ -57,6 +58,7 @@ export const ShowcaseCard = ({
   id: string;
   subTitle: string;
   technologies: string[];
+  imageSrc: IGatsbyImageData | undefined;
 }) => {
   const { expand, setExpand } = useShowcase();
   const controls = useAnimation();
@@ -75,7 +77,7 @@ export const ShowcaseCard = ({
       <Overlay
         layout
         transition={{ transition: { duration: 0.5 } }}
-        isSelected={expand === id}
+        $isSelected={expand === id}
       >
         <CardContent
           $isSelected={expand === id}
@@ -83,30 +85,32 @@ export const ShowcaseCard = ({
           transition={{ transition: { duration: 0.5 } }}
         >
           <ImageBackground
-            isSelected={expand === id}
+            $isSelected={expand === id}
             variants={ImageVariants}
             initial="start"
             animate={controls}
             layout
             transition={{ transition: { duration: 0.5 } }}
           >
-            <ImageContainer isSelected={expand === id}>
-              <StaticImage
-                src="../../images/PNG/TSL.png"
-                alt="The Sugar Look screenshots"
-                style={{
-                  width: '100%',
-                  height: '220px',
-                  borderRadius: '13px',
-                  overflow: 'hidden',
-                }}
-              />
+            <ImageContainer $isSelected={expand === id}>
+              {imageSrc && (
+                <GatsbyImage
+                  image={imageSrc}
+                  alt="test"
+                  style={{
+                    width: '100%',
+                    height: '220px',
+                    borderRadius: '13px',
+                    overflow: 'hidden',
+                  }}
+                />
+              )}
             </ImageContainer>
           </ImageBackground>
           <RoundedRectangle
             variants={RectangleVariants}
             animate={controls}
-            isSelected={expand === id}
+            $isSelected={expand === id}
           >
             {expand === id && (
               <Exit

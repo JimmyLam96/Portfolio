@@ -59,7 +59,6 @@ const HomePage = ({ id }: { id: string }) => {
           image={bg}
           alt="Waves background"
           style={{
-            height: '50%',
             position: 'absolute',
             bottom: 0,
           }}

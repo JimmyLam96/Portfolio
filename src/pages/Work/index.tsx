@@ -1,7 +1,7 @@
 import { AnimateSharedLayout, useAnimation } from 'framer-motion';
-import { useStaticQuery } from 'gatsby';
-import { graphql } from 'gatsby';
-import React, { useEffect, useState } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
+import React from 'react';
 import { ShowcaseCard } from '../../components/WorkShowcase';
 import { DefaultText36 } from '../../config/DefaulTextSizes';
 import Icons from './icons';
@@ -12,14 +12,14 @@ import {
   WorkContent,
   Header,
 } from './styles';
-import { TypeNode, TypeProjectMarkdown } from './types';
+import { TypeNode } from './types';
 
 const Work = ({ id }: { id: string }) => {
-  const data: TypeProjectMarkdown = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query GetProjectsInfoQuerry {
       allMarkdownRemark(
         filter: {
-          frontmatter: { title: { ne: null }, technologies: { ne: null } }
+          frontmatter: { technologies: { ne: null }, title: { ne: null } }
         }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
@@ -31,12 +31,22 @@ const Work = ({ id }: { id: string }) => {
             title
             date
             subTitle
+            slug
           }
           id
         }
       }
+      allFile(filter: { relativeDirectory: { eq: "PNG" } }) {
+        nodes {
+          childImageSharp {
+            gatsbyImageData
+          }
+          absolutePath
+        }
+      }
     }
   `);
+
   return (
     <Background id={id}>
       <Content>
@@ -47,20 +57,36 @@ const Work = ({ id }: { id: string }) => {
           </Header>
           <WorkContent>
             <ShowcaseContainer>
-              {data.allMarkdownRemark.nodes.map((x: TypeNode) => {
-                const { title, technologies, shortText, longText, subTitle } =
-                  x.frontmatter;
-                return (
-                  <ShowcaseCard
-                    id={x.id}
-                    title={title}
-                    shortText={shortText}
-                    longText={longText}
-                    subTitle={subTitle}
-                    technologies={technologies}
-                  />
-                );
-              })}
+              {data.allMarkdownRemark.nodes.map(
+                (x: TypeNode, index: number) => {
+                  const {
+                    title,
+                    technologies,
+                    shortText,
+                    longText,
+                    subTitle,
+                    slug,
+                  } = x.frontmatter;
+                  const imageSrc = data.allFile.nodes.find((x: any) =>
+                    x.absolutePath.includes(slug),
+                  );
+                  const image = getImage(
+                    imageSrc.childImageSharp.gatsbyImageData,
+                  );
+                  return (
+                    <ShowcaseCard
+                      key={index}
+                      id={x.id}
+                      title={title}
+                      shortText={shortText}
+                      longText={longText}
+                      subTitle={subTitle}
+                      technologies={technologies}
+                      imageSrc={image}
+                    />
+                  );
+                },
+              )}
             </ShowcaseContainer>
           </WorkContent>
         </AnimateSharedLayout>

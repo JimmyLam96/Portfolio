@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import React from 'react';
 import { DefaultText14 } from '../../config/DefaulTextSizes';
 import { FooterContent, HR, Technology, TechnologyContainer } from './styles';

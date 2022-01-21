@@ -39,6 +39,7 @@ export const ShowcaseContainer = styled(motion.div)`
 export const Header = styled.div`
   display: flex;
   width: 100%;
+  max-width: 1400px;
   align-items: center;
   min-height: 5vh;
   @media screen and (max-width: ${ScreenSizes.LAPTOP}) {

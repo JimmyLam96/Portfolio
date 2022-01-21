@@ -5,31 +5,32 @@ import { DefaultColors } from '../../config/DefaultColors';
 import { DefaultText24 } from '../../config/DefaulTextSizes';
 import { ScreenSizes } from '../../config/ScreenSizes';
 
-export const RoundedRectangle = styled(motion.div)<{ isSelected: boolean }>`
+export const RoundedRectangle = styled(motion.div)<{ $isSelected: boolean }>`
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: ${(props) =>
-    props.isSelected ? 'space-around' : 'space-evenly'};
+    props.$isSelected ? 'space-around' : 'space-evenly'};
   padding: 15px 25px;
-  border-radius: ${(props) => (props.isSelected ? '0 13px 13px 0' : '13px')};
+  border-radius: ${(props) => (props.$isSelected ? '0 13px 13px 0' : '13px')};
   background-color: ${(props) =>
-    props.isSelected ? '#FFFFFF' : DefaultColors.Secondary};
+    props.$isSelected ? '#FFFFFF' : DefaultColors.Secondary};
   box-shadow: 0px 7px 50px 2px #0000001a;
   max-width: 65%;
   width: 100%;
 
   @media screen and (max-width: ${ScreenSizes.TABLET}) {
+    gap: 20px;
     ${(props) =>
-      props.isSelected
+      props.$isSelected
         ? css`
-            border-radius: ${props.isSelected ? '0 0 13px 13px' : '13px'};
+            border-radius: ${props.$isSelected ? '0 0 13px 13px' : '13px'};
             max-width: 80%;
           `
         : css`
             gap: 15px;
             max-width: 100%;
-          `}
+          `};
   }
 `;
 
@@ -42,21 +43,21 @@ export const SubTitle = styled(DefaultText24)`
   color: ${DefaultColors.Tertairy};
 `;
 
-export const ImageBackground = styled(motion.div)<{ isSelected: boolean }>`
+export const ImageBackground = styled(motion.div)<{ $isSelected: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   max-width: 30%;
   z-index: 1;
-  border-radius: ${(props) => (props.isSelected ? '13px 0 0 13px' : '13px')};
+  border-radius: ${(props) => (props.$isSelected ? '13px 0 0 13px' : '13px')};
 
   @media screen and (max-width: ${ScreenSizes.TABLET}) {
     ${(props) =>
-      props.isSelected
+      props.$isSelected
         ? css`
             max-width: 80%;
-            border-radius: ${props.isSelected ? '13px 13px 0 0' : '13px'};
+            border-radius: ${props.$isSelected ? '13px 13px 0 0' : '13px'};
             overflow: hidden;
           `
         : css`
@@ -65,12 +66,15 @@ export const ImageBackground = styled(motion.div)<{ isSelected: boolean }>`
   }
 `;
 
-export const ImageContainer = styled.div<{ isSelected: boolean }>`
+export const ImageContainer = styled.div<{ $isSelected: boolean }>`
   width: 100%;
   ${(props) =>
-    props.isSelected &&
+    props.$isSelected &&
     css`
       width: 85%;
+      @media screen and (max-width: ${ScreenSizes.TABLET}) {
+        padding: 20px;
+      }
     `}
 `;
 
@@ -98,6 +102,9 @@ export const CardContent = styled(motion.div)<{ $isSelected: boolean }>`
       height: 375px;
       justify-content: center;
       cursor: auto;
+      @media screen and (max-width: ${ScreenSizes.TABLET}) {
+        height: fit-content;
+      }
     `}
 
   @media screen and (max-width: ${ScreenSizes.TABLET}) {
@@ -118,7 +125,7 @@ export const Card = styled.div`
   }
 `;
 
-export const Overlay = styled(motion.div)<{ isSelected: boolean }>`
+export const Overlay = styled(motion.div)<{ $isSelected: boolean }>`
   width: 100%;
   height: 100%;
   display: flex;
@@ -126,7 +133,7 @@ export const Overlay = styled(motion.div)<{ isSelected: boolean }>`
   align-items: center;
 
   ${(props) =>
-    props.isSelected &&
+    props.$isSelected &&
     css`
       position: fixed;
       z-index: 1;
