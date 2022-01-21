@@ -25,10 +25,10 @@ export default function Right({
   borderControls: AnimationControls;
   iconControls: AnimationControls;
 }) {
-  //get all the files that match PNG/photo.png using gatsby image, sharp and tranformer
+  //get all the files that match PNG/me.png using gatsby image, sharp and tranformer
   const data = useStaticQuery(graphql`
     query GetProfilePicQuerry {
-      file(relativePath: { eq: "PNG/photo.png" }) {
+      file(relativePath: { eq: "PNG/Me.png" }) {
         childrenImageSharp {
           gatsbyImageData
           fluid {
