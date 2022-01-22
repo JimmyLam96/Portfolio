@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
+    siteUrl: 'https://www.jimmylam.dev',
     title: 'My Portfolio',
     description: 'Web development portfolio of Jimmy Lam',
   },
@@ -10,6 +10,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-smoothscroll',
+    'gatsby-plugin-netlify',
     'gatsby-transformer-remark',
     {
       resolve: `gatsby-plugin-google-fonts`,
