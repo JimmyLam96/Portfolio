@@ -1,14 +1,9 @@
 import { useAnimation } from 'framer-motion';
-import {
-  StaticImage,
-  GatsbyImage,
-  IGatsbyImageData,
-} from 'gatsby-plugin-image';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import React, { useEffect } from 'react';
 import { DefaultColors } from '../../config/DefaultColors';
 import { DefaultText14 } from '../../config/DefaultTextSizes';
 import { useShowcase } from '../../providers/ShowcaseProvider/ShowcaseProvider';
-import ExpandedFooter from './expandedfooter';
 import {
   RoundedRectangle,
   SubTitle,
@@ -20,6 +15,7 @@ import {
   CardContent,
 } from './styles';
 import Exit from '../../images/SVG/Exit.svg';
+import ExpandedFooter from './expandedfooter';
 
 const RectangleVariants = {
   start: {
