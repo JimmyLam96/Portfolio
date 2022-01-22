@@ -15,7 +15,7 @@ import {
   CardContent,
 } from './styles';
 import Exit from '../../images/SVG/Exit.svg';
-import ExpandedFooter from './expandedfooter';
+import ExpandedFooter from './ExpandedFooter';
 
 const RectangleVariants = {
   start: {
