@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { DefaultColors, SVGColors } from '../../config/DefaultColors';
-import { DefaultText36, DefaultText48 } from '../../config/DefaulTextSizes';
-import { ScreenSizes } from '../../config/ScreenSizes';
+import { DefaultText36, DefaultText48 } from '../../config/DefaultTextSizes';
+import ScreenSizes from '../../config/ScreenSizes';
 import SignalIcon from '../../images/SVG/Signal.svg';
 import MoonIcon from '../../images/SVG/Moon.svg';
 import StairsIcon from '../../images/SVG/Stairs.svg';

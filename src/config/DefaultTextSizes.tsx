@@ -18,7 +18,7 @@ export const DefaultText36 = styled.h1`
   text-shadow: 0px 4px 4px 0px #00000040;
 `;
 
-export const DefaultText24 = styled.h2`
+export const DefaultText24 = styled.h3`
   font-size: 24px;
   font-style: normal;
   font-weight: 700;

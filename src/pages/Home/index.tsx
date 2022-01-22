@@ -1,10 +1,16 @@
-import React, { useEffect } from 'react';
-import Left from './LeftContent';
+import React, { useCallback, useEffect } from 'react';
+import Left from '../../page-components/Home/LeftContent';
 import Navbar from '../../components/Navbar';
-import { BG, Background, Content, InnerContent, Footer } from './styles';
+import {
+  BG,
+  Background,
+  Content,
+  InnerContent,
+  Footer,
+} from '../../page-components/Home/styles';
 import Triangle from '../../images/SVG/Triangle.svg';
 import { useAnimation } from 'framer-motion';
-import Right from './RightContent';
+import Right from '../../page-components/Home/RightContent';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
@@ -15,15 +21,15 @@ const HomePage = ({ id }: { id: string }) => {
 
   //start of the animation sequence returns a promise
   //we await the promise in the icons component to have sequenced animation
-  const runSyncAnimations = async () => {
+  const runSyncAnimations = useCallback(async () => {
     await handControls.start('hover');
     return await iconControls.start('show');
-  };
+  }, []);
 
   //as soon as we load into the page run previous animations
   useEffect(() => {
     runSyncAnimations();
-  }, []);
+  }, [runSyncAnimations]);
 
   const data = useStaticQuery(graphql`
     query GetBackgroundPicQuerry {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { ScreenSizes } from '../../../config/ScreenSizes';
+import ScreenSizes from '../../../config/ScreenSizes';
 import DefaultButton from '../../../components/DefaultButton';
 
 const H1 = styled.h1`

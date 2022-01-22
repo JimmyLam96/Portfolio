@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { ScreenSizes } from '../../config/ScreenSizes';
+import ScreenSizes from '../../config/ScreenSizes';
 import HomePageBG from '../../images/SVG/HomePageBG.svg';
 
 export const Background = styled.div`

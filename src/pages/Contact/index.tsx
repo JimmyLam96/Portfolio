@@ -15,12 +15,12 @@ import {
   Form,
   Signal,
   ContactContainer,
-} from './styles';
+} from '../../page-components/Contact/styles';
 import ContactArrow from '../../images/SVG/ContactArrow.svg';
 import { useAnimation } from 'framer-motion';
 import DefaultButton from '../../components/DefaultButton';
 import emailjs from 'emailjs-com';
-import Icons from './icons';
+import Icons from '../../page-components/Contact/icons';
 
 export default function About({ id }: { id: string }) {
   const controls = useAnimation();

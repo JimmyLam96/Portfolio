@@ -3,16 +3,16 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { ShowcaseCard } from '../../components/WorkShowcase';
-import { DefaultText36 } from '../../config/DefaulTextSizes';
-import Icons from './icons';
+import { DefaultText36 } from '../../config/DefaultTextSizes';
+import Icons from '../../page-components/Work/icons';
 import {
   Background,
   Content,
   ShowcaseContainer,
   WorkContent,
   Header,
-} from './styles';
-import { TypeNode } from './types';
+} from '../../page-components/Work/styles';
+import { TypeNode } from '../../page-components/Work/types';
 
 const Work = ({ id }: { id: string }) => {
   const data = useStaticQuery(graphql`

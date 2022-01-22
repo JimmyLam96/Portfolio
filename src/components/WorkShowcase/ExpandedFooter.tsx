@@ -1,5 +1,5 @@
 import React from 'react';
-import { DefaultText14 } from '../../config/DefaulTextSizes';
+import { DefaultText14 } from '../../config/DefaultTextSizes';
 import { FooterContent, HR, Technology, TechnologyContainer } from './styles';
 
 const Variants = {

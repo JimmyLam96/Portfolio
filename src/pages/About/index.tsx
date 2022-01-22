@@ -23,8 +23,8 @@ import {
   YellowPolka,
   Waves,
   Moon,
-} from './styles';
-import { DefaultText18 } from '../../config/DefaulTextSizes';
+} from '../../page-components/About/styles';
+import { DefaultText18 } from '../../config/DefaultTextSizes';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import {
@@ -32,7 +32,7 @@ import {
   BorderVariants,
   IconVariants,
   ParentVariants,
-} from './animations';
+} from '../../page-components/About/animations';
 
 export default function About({ id }: { id: string }) {
   const gridControls = useAnimation();

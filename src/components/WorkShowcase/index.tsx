@@ -6,7 +6,7 @@ import {
 } from 'gatsby-plugin-image';
 import React, { useEffect } from 'react';
 import { DefaultColors } from '../../config/DefaultColors';
-import { DefaultText14 } from '../../config/DefaulTextSizes';
+import { DefaultText14 } from '../../config/DefaultTextSizes';
 import { useShowcase } from '../../providers/ShowcaseProvider/ShowcaseProvider';
 import ExpandedFooter from './expandedfooter';
 import {

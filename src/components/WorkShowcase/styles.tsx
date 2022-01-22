@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled, { css } from 'styled-components';
 import { DefaultColors } from '../../config/DefaultColors';
-import { DefaultText24 } from '../../config/DefaulTextSizes';
-import { ScreenSizes } from '../../config/ScreenSizes';
+import { DefaultText24 } from '../../config/DefaultTextSizes';
+import ScreenSizes from '../../config/ScreenSizes';
 
 export const RoundedRectangle = styled(motion.div)<{ $isSelected: boolean }>`
   position: relative;

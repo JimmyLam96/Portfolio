@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { ScreenSizes } from '../../../config/ScreenSizes';
+import ScreenSizes from '../../../config/ScreenSizes';
 
 export const Content = styled.div`
   display: flex;

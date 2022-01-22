@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { DefaultColors, SVGColors } from '../../config/DefaultColors';
-import { DefaultText18 } from '../../config/DefaulTextSizes';
-import { ScreenSizes } from '../../config/ScreenSizes';
+import { DefaultText18 } from '../../config/DefaultTextSizes';
+import ScreenSizes from '../../config/ScreenSizes';
 import { DefaultBorder } from '../Home/RightContent/styles';
 import PersonalPolka from '../../images/SVG/PersonalPolka.svg';
 import WavesIcon from '../../images/SVG/Waves.svg';
