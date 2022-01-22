@@ -118,7 +118,7 @@ export default function About({ id }: { id: string }) {
               {codingMe && (
                 <GatsbyImage
                   image={codingMe}
-                  alt="Rockstar IT Logo"
+                  alt="Me coding"
                   imgStyle={{
                     width: '100%',
                     height: '180px',
