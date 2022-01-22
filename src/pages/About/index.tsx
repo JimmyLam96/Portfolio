@@ -119,9 +119,9 @@ export default function About({ id }: { id: string }) {
                 <GatsbyImage
                   image={codingMe}
                   alt="Rockstar IT Logo"
-                  style={{
+                  imgStyle={{
                     width: '100%',
-                    height: 'auto',
+                    height: '180px',
                     borderRadius: '10px',
                   }}
                 />
@@ -146,7 +146,11 @@ export default function About({ id }: { id: string }) {
               <GatsbyImage
                 image={marathonImage}
                 alt="Terschelling marathon picture"
-                style={{ width: '100%', height: 'auto', borderRadius: '10px' }}
+                imgStyle={{
+                  width: '100%',
+                  height: '180px',
+                  borderRadius: '10px',
+                }}
               />
             )}
             <PersonalText>

@@ -34,6 +34,7 @@ export const ShowcaseContainer = styled(motion.div)`
   flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
+  width: 100%;
 `;
 
 export const Header = styled.div`

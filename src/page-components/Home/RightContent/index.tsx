@@ -56,7 +56,7 @@ export default function Right({
           <GatsbyImage
             image={profile}
             alt="profile picture"
-            style={{
+            imgStyle={{
               borderRadius: '25px',
               width: '100%',
               height: 'auto',
