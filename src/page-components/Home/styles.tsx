@@ -50,9 +50,6 @@ export const BG = styled(HomePageBG)`
   z-index: -2;
   position: absolute;
   bottom: 0;
-  /* width: 100%; */
-  /* min-height: 100vh; */
-  /* max-height: 1500px; */
 `;
 
 export const PolkaDiv = styled(motion.div)`

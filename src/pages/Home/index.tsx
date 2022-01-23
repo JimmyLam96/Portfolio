@@ -9,10 +9,11 @@ import {
   Footer,
 } from '../../page-components/Home/styles';
 import Triangle from '../../images/SVG/Triangle.svg';
-import { useAnimation } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import Right from '../../page-components/Home/RightContent';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const HomePage = ({ id }: { id: string }) => {
   const handControls = useAnimation();
@@ -57,7 +58,9 @@ const HomePage = ({ id }: { id: string }) => {
           <Right borderControls={borderControls} iconControls={iconControls} />
         </InnerContent>
         <Footer>
-          <Triangle />
+          <motion.div whileHover={{ y: -10 }}>
+            <Triangle onClick={() => scrollTo('#about')} />
+          </motion.div>
         </Footer>
       </Content>
       {bg && (
